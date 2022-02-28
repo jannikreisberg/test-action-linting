@@ -37,29 +37,7 @@ jobs:
         with:
           name: reasoner
           path: openlletcli
-      
-      # HTTP Request to OOPs
-- get_message:
-    call: http.post
-    args:
-      url: http://oops.linkeddata.es/rest
-      body:
-        some_val: 
-          "<?xml version="1.0" encoding="UTF-8"?>
-          <OOPSRequest>
-          <OntologyURI></OntologyURI>
-          <OntologyContent>
-          <![CDATA[
-        
-          ]]>
-          </OntologyContent>
-          <Pitfalls></Pitfalls>
-          <OutputFormat></OutputFormat>
-          </OOPSRequest"
-    result: the_message
-- return_value:
-    return: ${the_message.body}
-    
+         
 
       # Get changed files and run OOPs pitfalls #TOBECHANGE
       - name: Get files and check pitfalls
@@ -70,6 +48,28 @@ jobs:
           for f in $FILES 
           do 
             if [[ $f == *".owl"* ]]; then
+              # HTTP Request to OOPs
+              - get_message:
+              call: http.post
+              args:
+                url: http://oops.linkeddata.es/rest
+                body:
+                some_val: 
+                "<?xml version="1.0" encoding="UTF-8"?>
+                <OOPSRequest>
+                <OntologyURI></OntologyURI>
+                <OntologyContent>
+                <![CDATA[
+        
+                ]]>
+                </OntologyContent>
+                <Pitfalls></Pitfalls>
+                <OutputFormat></OutputFormat>
+                </OOPSRequest"
+              result: the_message.body
+
+      - return_value:
+    return: ${the_message.body}
         OOPsResults=get_message 
         result="nopitfalls"
               if [[ $the_message.body != *""* ]]; then
