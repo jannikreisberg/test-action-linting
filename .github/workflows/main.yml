@@ -38,7 +38,7 @@ jobs:
           name: reasoner
           path: openlletcli
 
-
+      # Get changed files and run OOPs pitfalls #TOBECHANGE
       - name: Get files and check pitfalls
         id: checkAllFiles
         run: |
