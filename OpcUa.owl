@@ -102,6 +102,7 @@
     
 
 
+
     <!-- http://www.hsu-ifa.de/ontologies/OpcUa#componentOf -->
 
     <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/OpcUa#componentOf">
