@@ -1,5 +1,5 @@
 # A workflow to check for "OOPS" pitfalls of changed ontology files
-name: Check Ontology Pitfalls
+name: Check Ontology Pitfalls via Java Steps
 
 # Controls when the workflow will run
 on:
