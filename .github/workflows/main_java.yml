@@ -23,16 +23,16 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/github-script@v6
-        with:
+       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+       - uses: actions/github-script@v6
+         with:
           script: |
-            # Get changed files and run OOPs pitfalls
+            // Get changed files and run OOPs pitfalls
             console.log("Get files and check pitfalls")
-            # const url = "https://api.github.com/repos/${{github.repository}}/pulls/${{github.event.pull_request.number}}/files"
-            # console.log(url)
-            # FILES=$(curl -s -X GET -G $URL | jq -r '.[] | .filename')
-            #  for f in $FILES 
-            #  do 
-            #    if [[ $f == *".owl"* ]]; then
-            #    echo f
+            // const url = "https://api.github.com/repos/${{github.repository}}/pulls/${{github.event.pull_request.number}}/files"
+            // console.log(url)
+            // FILES=$(curl -s -X GET -G $URL | jq -r '.[] | .filename')
+            //  for f in $FILES 
+            //  do 
+            //    if [[ $f == *".owl"* ]]; then
+            //    echo f
