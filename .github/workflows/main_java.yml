@@ -25,7 +25,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/github-script@v6
         with:
-<<<<<<< HEAD
           script:
             # Get changed files and run OOPs pitfalls
             console.log("Get files and check pitfalls")
@@ -35,22 +34,3 @@ jobs:
               do 
                 if [[ $f == *".owl"* ]]; then
                 echo f
-=======
-          java-version: 14
-          
-      # Upload OOPs #TOBECHANGED
-      #- name: Archive production artifacts
-      #  uses: actions/upload-artifact@v2
-      #  with:
-      #    name: reasoner
-      #    path: openlletcli
-
-      # Get changed files and run OOPs pitfalls
-      - name: Get files and check pitfalls
-        id: checkAllFiles
-        run: |
-          URL="https://api.github.com/repos/${{github.repository}}/pulls/${{github.event.pull_request.number}}/files"
-          FILES=$(curl -s -X GET -G $URL | jq -r '.[] | .filename')
-          for f in $FILES 
-          do
->>>>>>> f5d588f47fce260322dea161131b27c16526a01b
