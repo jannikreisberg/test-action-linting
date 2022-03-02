@@ -6,8 +6,8 @@ on:
   # Triggered by PRs to develop
   pull_request:
     types:
-      - opened
       - edited
+
     paths:
       - '**.owl'
 
