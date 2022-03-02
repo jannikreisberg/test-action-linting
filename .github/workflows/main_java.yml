@@ -5,8 +5,7 @@ name: Check Ontology Pitfalls via Java Steps
 on:
   # Triggered by PRs to develop
   pull_request:
-    types:
-      - edited
+    types: [opened, edited]
 
     paths:
       - '**.owl'
