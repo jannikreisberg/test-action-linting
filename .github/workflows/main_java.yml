@@ -50,14 +50,14 @@ jobs:
             "};
             console.log(HTTPDATA);
             // http Request Parameters
-            const otherParameters = {
-              body: Data
-            };
-            fetch(OOPSURL, otherParameters)
-            .then(data=>{return data.json()})
-            .then(res=>{console.log(res)})
-            .catch(error=>console.log(error))
-            console.log("Erfolgreich 2.0");
+            // const otherParameters = {
+            //   body: Data
+            // };
+            // fetch(OOPSURL, otherParameters)
+           //  .then(data=>{return data.json()})
+           //  .then(res=>{console.log(res)})
+           //  .catch(error=>console.log(error))
+           //  console.log("Erfolgreich 2.0");
             //  FILES=$(curl -s -X GET -G $URL | jq -r '.[] | .filename')
             //    for f in $FILES 
             //    do 
