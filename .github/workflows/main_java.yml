@@ -33,7 +33,7 @@ jobs:
             console.log(URL);
             const file = await github.request(URL);
             console.log(file);
-            consolt.log("Erfolgreich");
+            console.log("Erfolgreich");
             //  FILES=$(curl -s -X GET -G $URL | jq -r '.[] | .filename')
             //    for f in $FILES 
             //    do 
