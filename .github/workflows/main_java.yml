@@ -37,7 +37,7 @@ jobs:
             const OOPSURL = "http://oops.linkeddata.es/rest"
             console.log(OOPSURL);
             const HTTPDATA = {
-              <?xml version="1.0" encoding="UTF-8"?>
+              "<?xml version="1.0" encoding="UTF-8"?>
                 <OOPSRequest>
                 <OntologyURI>
                 https://raw.githubusercontent.com/hsu-aut/IndustrialStandard-ODP-DIN8580/master/DIN8580.owl
@@ -46,8 +46,8 @@ jobs:
                 </OntologyContent>
                 <Pitfalls></Pitfalls>
                 <OutputFormat></OutputFormat>
-                </OOPSRequest
-            };
+                </OOPSRequest>
+            "};
             console.log(HTTPDATA);
             // http Request Parameters
             const otherParameters = {
