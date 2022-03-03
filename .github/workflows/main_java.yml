@@ -48,7 +48,7 @@ jobs:
             //    <OutputFormat></OutputFormat>
             //    </OOPSRequest>
             // "};
-            console.log(HTTPDATA);
+            // console.log(HTTPDATA);
             // http Request Parameters
             // const otherParameters = {
             //   body: Data
