@@ -31,7 +31,7 @@ jobs:
             // const URL = "https://api.github.com/repos/${{github.repository}}/pulls/${{github.event.pull_request.number}}/files"
             const URL = "https://github.com/jannikreisberg/test-action-linting/tree/master/OWL_Files";
             console.log(URL);
-            const file = file_get_contents(URL);
+            const file = await github.request(URL);
             console.log(file);
             //  FILES=$(curl -s -X GET -G $URL | jq -r '.[] | .filename')
             //    for f in $FILES 
