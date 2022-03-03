@@ -37,7 +37,7 @@ jobs:
             //
             //
             //
-            // const file = await github.request(URL);
+            const file = await github.request(URL);
             // console.log(file);
             // console.log("Erfolgreich");
             // var fs = require('fs');
