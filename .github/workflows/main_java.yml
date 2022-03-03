@@ -35,10 +35,11 @@ jobs:
             // const file = await github.request(URL);
             // console.log(file);
             // console.log("Erfolgreich");
-            var fs = require('fs');
-            var files = fs.readdirSync(URL);
-            console.log(files);
-            console.log("Erfolgreich");
+            FILES=$(curl -s -X GET -G $URL | jq -r '.[] | .filename')
+            // var fs = require('fs');
+            // var files = fs.readdirSync(URL);
+            // console.log(files);
+            // console.log("Erfolgreich");
             // OOPS HTTP Request with Found Data
             // const OOPSURL = "http://oops.linkeddata.es/rest"
             // console.log(OOPSURL);
