@@ -34,6 +34,30 @@ jobs:
             const file = await github.request(URL);
             console.log(file);
             console.log("Erfolgreich");
+            const OOPSURL = "http://oops.linkeddata.es/rest"
+            console.log(OOPSURL);
+            const HTTPDATA = {
+              <?xml version="1.0" encoding="UTF-8"?>
+                <OOPSRequest>
+                <OntologyURI>
+                https://raw.githubusercontent.com/hsu-aut/IndustrialStandard-ODP-DIN8580/master/DIN8580.owl
+                </OntologyURI>
+                <OntologyContent>
+                </OntologyContent>
+                <Pitfalls></Pitfalls>
+                <OutputFormat></OutputFormat>
+                </OOPSRequest
+            };
+            console.log(HTTPDATA);
+            // http Request Parameters
+            const otherParameters = {
+              body: Data
+            };
+            fetch(OOPSURL, otherParameters)
+            .then(data=>{return data.json()})
+            .then(res=>{console.log(res)})
+            .catch(error=>console.log(error))
+            console.log("Erfolgreich 2.0");
             //  FILES=$(curl -s -X GET -G $URL | jq -r '.[] | .filename')
             //    for f in $FILES 
             //    do 
