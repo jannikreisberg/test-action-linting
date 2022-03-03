@@ -35,7 +35,7 @@ jobs:
             const file = await github.request(URL);
             console.log(file);
             console.log("Erfolgreich");
-            consolte.log(file.Object.entries())
+            console.log(file.Object.entries())
             // console.log(file.raw_url);
             // var fs = require('fs');
             // var files = fs.readdirSync(URL);
