@@ -28,9 +28,8 @@ jobs:
           script: |
             // Get changed files and run OOPs pitfalls
             console.log("Get files and check pitfalls");
-            const URL = "https://api.github.com/repos/${{github.repository}}/pulls/${{github.event.pull_request.number}}/files"
-            // const URL = "https://raw.githubusercontent.com/hsu-aut/Industrial-Standard-Ontology-Design-Patterns/master/VDI%203682/VDI3682.owl";
-            // const URL = "https://api.github.com/jannikreisberg/test-action-linting/pull/5/files"
+            // const URL = "https://api.github.com/repos/${{github.repository}}/pulls/${{github.event.pull_request.number}}/files"
+            const URL = "https://api.github.com/repos/jannikreisberg/test-action-linting/pulls/5/files"
             console.log(URL);
             // Import files of URL as var FILES=$(curl -s -X GET -G $URL | jq -r '.[] | .filename')
             const file = await github.request(URL);
