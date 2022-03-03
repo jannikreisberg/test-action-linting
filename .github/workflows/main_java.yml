@@ -36,7 +36,7 @@ jobs:
             // console.log(file);
             // console.log("Erfolgreich");
             var fs = require('fs');
-            var files = fs.readdirSync(/downloads');
+            var files = fs.readdirSync(URL);
             console.log(files);
             console.log("Erfolgreich");
             // OOPS HTTP Request with Found Data
