@@ -37,11 +37,11 @@ jobs:
             // console.log("Show requested Data-Files ->");
             // console.log(file.data);
             console.log("Files Import Sucessful!");
-            console.log("GET RAW-File-URL list ->");
+            console.log("GET RAW-File-URL list of Pull-Request ->");
             const raw_urls = file.data.map(file => file.raw_url);
             console.log(raw_urls);
             const raw_url_items = raw_urls.values();
-            console.log("OWL Files in PullRequest ->");
+            console.log("OWL Files of Pull-Request ->");
             for (const raw_url_item of raw_url_items)
             {
             if (raw_url_item.endsWith(".owl") == true)
@@ -49,6 +49,10 @@ jobs:
               console.log(raw_url_item);
               }
             }
+            console.log("Erfolgreich");
+            //
+            //
+            //
             // Object.entries(file.data).forEach(([key, value]) => console.log(`${key}: ${value}`));
             // console.log("Erfolgreich 2.0");
             // console.log(Object.entries(file.data))
