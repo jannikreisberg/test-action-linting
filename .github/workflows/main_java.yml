@@ -32,7 +32,7 @@ jobs:
             const URL = "https://api.github.com/repos/jannikreisberg/test-action-linting/pulls/7/files"
             console.log("Analyzing following URL ->");
             console.log(URL);
-            console.log("Get File list of URL ->");
+            // console.log("Get File list of URL ->");
             const file = await github.request(URL);
             // console.log("Show requested Data-Files ->");
             // console.log(file.data);
@@ -40,11 +40,11 @@ jobs:
             console.log("GET RAW-File list of URL ->");
             const raw_urls = file.data.map(file => file.raw_url);
             console.log(raw_urls);
-            const raw_urls_values = raw_urls.values();
-            for (const raw_url in raw_urls_values) 
+            const rawurlsvalues = raw_urls.values();
+            for (const rawurl in rawurlsvalues) 
               {
                 //if [[ raw_url == *".owl"* ]]; then
-                console.log(raw_url);
+                console.log(rawurl);
               }
             // Object.entries(file.data).forEach(([key, value]) => console.log(`${key}: ${value}`));
             // console.log("Erfolgreich 2.0");
