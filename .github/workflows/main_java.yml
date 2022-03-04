@@ -30,17 +30,18 @@ jobs:
             console.log("Get files and check pitfalls");
             // const URL = "https://api.github.com/repos/${{github.repository}}/pulls/${{github.event.pull_request.number}}/files"
             const URL = "https://api.github.com/repos/jannikreisberg/test-action-linting/pulls/7/files"
-            console.log("Analyzing following URL ->");
+            console.log("Analyzing following Pull-Request URL ->");
             console.log(URL);
             // console.log("Get File list of URL ->");
             const file = await github.request(URL);
             // console.log("Show requested Data-Files ->");
             // console.log(file.data);
-            console.log("Files Import Erfolgreich!");
-            console.log("GET RAW-File list of URL ->");
+            console.log("Files Import Sucessful!");
+            console.log("GET RAW-File-URL list ->");
             const raw_urls = file.data.map(file => file.raw_url);
             console.log(raw_urls);
             const raw_url_items = raw_urls.values();
+            console.log("OWL Files in PullRequest ->");
             for (const raw_url_item of raw_url_items)
             {
             if (raw_url_item.endsWith(".owl") == true)
