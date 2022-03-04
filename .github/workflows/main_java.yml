@@ -51,7 +51,9 @@ jobs:
               checkingfile = checkingfile.data;
               console.log(checkingfile);
               console.log("<- OOPS! Callback ->");
-              const feedback = await github.request.post(OOPSURL);
+              const feedback = await github.request({
+                method: 'POST',
+                uri: OOPSURL});
               console.log(feedback);
               }
             }
