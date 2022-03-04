@@ -40,9 +40,9 @@ jobs:
             console.log("GET RAW-File list of URL ->");
             const raw_urls = file.data.map(file => file.raw_url);
             console.log(raw_urls);
-            for f in $raw_urls 
+            for f in raw_urls 
               do 
-                if [[ $f == *".owl"* ]]; then
+                if [[ f == *".owl"* ]]; then
                   console.log(f);
             // Object.entries(file.data).forEach(([key, value]) => console.log(`${key}: ${value}`));
             // console.log("Erfolgreich 2.0");
