@@ -40,7 +40,7 @@ jobs:
             console.log("GET RAW-File list uf URLs ->");
             for (const [key, value] of Object.entries(file.data)) 
               {
-              console.log(`${key[1]}- ${value}`);
+              console.log(`${key}- ${key[1]}`);
               }
             Object.entries(file.data).forEach(([key, value]) => console.log(`${key}: ${value}`));
             // console.log("Erfolgreich 2.0");
