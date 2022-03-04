@@ -40,7 +40,9 @@ jobs:
               {
               console.log(`${key}: ${value}`);
               }
-            // console.log(file.Object.entries())
+            console.log("Erfolgreich 2.0");
+            console.log(Object.entries(file))
+            console.log("Erfolgreich 3.0");
             //
             //
             //
