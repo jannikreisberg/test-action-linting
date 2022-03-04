@@ -31,7 +31,7 @@ jobs:
             console.log("");
             // const URL = "https://api.github.com/repos/${{github.repository}}/pulls/${{github.event.pull_request.number}}/files"
             const URL = "https://api.github.com/repos/jannikreisberg/test-action-linting/pulls/7/files"
-            console.log("<- Analyzing following Pull-Request URL: " + URL);
+            console.log("<- Analyzing following Pull-Request URL: " + URL + "->");
             // console.log(URL);
             console.log("");
             console.log("<- Importing files... ->");
