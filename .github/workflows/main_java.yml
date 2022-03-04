@@ -38,12 +38,12 @@ jobs:
             // console.log(file.data);
             console.log("Files Import Erfolgreich!");
             console.log("GET RAW-File list of URL ->");
-            const rawurls = file.data.map(file => file.raw_url);
-            console.log(rawurls);
-            const iterator = rawurls.values();
-            for (const value of iterator)
+            const raw_urls = file.data.map(file => file.raw_url);
+            console.log(raw_urls);
+            const raw_url_items = raw_urls.values();
+            for (const raw_url_item of raw_url_items)
             {
-            console.log(value);
+            console.log(raw_url_item);
             }
             // Object.entries(file.data).forEach(([key, value]) => console.log(`${key}: ${value}`));
             // console.log("Erfolgreich 2.0");
