@@ -43,7 +43,7 @@ jobs:
             const raw_url_items = raw_urls.values();
             for (const raw_url_item of raw_url_items)
             {
-            if (raw_url_item.endsWith(.owl) == true)
+            if (raw_url_item.endsWith(".owl") == true)
               {
               console.log(raw_url_item);
               }
