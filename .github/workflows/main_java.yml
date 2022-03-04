@@ -40,7 +40,8 @@ jobs:
             console.log("GET RAW-File list of URL ->");
             const raw_urls = file.data.map(file => file.raw_url);
             console.log(raw_urls);
-            for (const raw_url in raw_urls.values()) 
+            const raw_urls_values = raw_urls.values();
+            for (const raw_url in raw_urls_values) 
               {
                 //if [[ raw_url == *".owl"* ]]; then
                 console.log(raw_url);
