@@ -35,6 +35,8 @@ jobs:
             console.log("Get File list of URL ->");
             const file = await github.request(URL);
             console.log("Show requested Files:");
+            console.log(file);
+            console.log("Show requested Files:");
             console.log(file.data);
             console.log("Files Import Erfolgreich!");
             console.log("GET RAW-File list uf URLs ->");
