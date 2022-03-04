@@ -36,7 +36,7 @@ jobs:
             const file = await github.request(URL);
             console.log("Show requested Files:");
             console.log(file);
-            console.log("Show requested Files:");
+            console.log("Show requested Data-Files:");
             console.log(file.data);
             console.log("Files Import Erfolgreich!");
             console.log("GET RAW-File list uf URLs ->");
