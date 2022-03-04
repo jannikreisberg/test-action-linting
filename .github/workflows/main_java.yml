@@ -43,7 +43,10 @@ jobs:
             const raw_url_items = raw_urls.values();
             for (const raw_url_item of raw_url_items)
             {
-            console.log(raw_url_item);
+            if (( $raw_url_item  == *".owl"* ))
+              {
+              console.log(raw_url_item);
+              }
             }
             // Object.entries(file.data).forEach(([key, value]) => console.log(`${key}: ${value}`));
             // console.log("Erfolgreich 2.0");
