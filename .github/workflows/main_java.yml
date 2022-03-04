@@ -38,16 +38,16 @@ jobs:
             console.log(file.data);
             console.log("Files Import Erfolgreich!");
             console.log("GET RAW-File list uf URLs ->");
-            for (const [key, value] of Object.entries(file.data)) 
+            for (const [key, value] of Object.entries(file.data.raw_url)) 
               {
               console.log(`${key}: ${value}`);
               }
             console.log("Erfolgreich 2.0");
-            console.log(Object.entries(file.data))
+            console.log(Object.entries(file.data.raw_url))
             console.log("Erfolgreich 3.0");
-            console.log(Object.values(file.data))
+            console.log(Object.values(file.data.raw_url))
             console.log("Erfolgreich 4.0");
-            console.log(Object.entries(file.data))
+            console.log(Object.entries(file.data.raw_url))
             console.log("Erfolgreich 5.0");
             //
             //
