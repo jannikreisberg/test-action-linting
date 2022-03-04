@@ -34,14 +34,16 @@ jobs:
             console.log(URL);
             console.log("Get File list of URL ->");
             const file = await github.request(URL);
-            console.log("Show requested Files:");
-            console.log(file);
-            console.log("Show requested Data-Files:");
-            console.log(file.data);
+            // console.log("Show requested Data-Files ->");
+            // console.log(file.data);
             console.log("Files Import Erfolgreich!");
-            console.log("GET RAW-File list uf URLs ->");
+            console.log("GET RAW-File list of URL ->");
             const raw_urls = file.data.map(file => file.raw_url);
             console.log(raw_urls);
+            for f in $raw_urls 
+              do 
+                if [[ $f == *".owl"* ]]; then
+                  console.log(f);
             // Object.entries(file.data).forEach(([key, value]) => console.log(`${key}: ${value}`));
             // console.log("Erfolgreich 2.0");
             // console.log(Object.entries(file.data))
