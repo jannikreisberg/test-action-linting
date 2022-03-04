@@ -30,20 +30,20 @@ jobs:
             console.log("Get files and check pitfalls");
             // const URL = "https://api.github.com/repos/${{github.repository}}/pulls/${{github.event.pull_request.number}}/files"
             const URL = "https://api.github.com/repos/jannikreisberg/test-action-linting/pulls/7/files"
-            console.log("Analyzing following URL:");
+            console.log("Analyzing following URL ->");
             console.log(URL);
-            console.log("Get File list of URL");
+            console.log("Get File list of URL ->");
             const file = await github.request(URL);
             console.log("Show requested Files:");
-            console.log(file);
-            console.log("Files Import Erfolgreich");
-            console.log("GET RAW-File list uf URLs:");
-            for (const [key, value] of Object.entries(file)) 
+            console.log(file.data);
+            console.log("Files Import Erfolgreich!");
+            console.log("GET RAW-File list uf URLs ->");
+            for (const [key, value] of Object.entries(file.data)) 
               {
               console.log(`${key}: ${value}`);
               }
             console.log("Erfolgreich 2.0");
-            console.log(Object.entries(file))
+            console.log(Object.entries(file.data))
             console.log("Erfolgreich 3.0");
             //
             //
