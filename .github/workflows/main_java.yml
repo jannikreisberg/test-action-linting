@@ -51,9 +51,6 @@ jobs:
               checkingfile = checkingfile.data;
               // console.log(checkingfile);
               console.log("<- OOPS! Return to OWL-File ->");
-              beforeAll(() => {
-                server.listen();
-                });
               const feedback = await github.request({
                 method: 'POST',
                 url: OOPSURL});
