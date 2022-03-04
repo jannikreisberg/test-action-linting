@@ -41,10 +41,10 @@ jobs:
             const rawurls = file.data.map(file => file.raw_url);
             console.log(rawurls);
             const iterator = rawurls.values();
-            // for (const value of iterator) {
-            //  {
-            //  console.log(value);
-            //  }
+            for (const value of iterator) {
+            {
+            console.log(value);
+            }
             // Object.entries(file.data).forEach(([key, value]) => console.log(`${key}: ${value}`));
             // console.log("Erfolgreich 2.0");
             // console.log(Object.entries(file.data))
