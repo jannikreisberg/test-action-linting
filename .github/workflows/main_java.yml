@@ -28,13 +28,16 @@ jobs:
           script: |
             // Get changed files and run OOPs pitfalls
             console.log("<- Get files and check pitfalls ->");
+            console.log("");
             // const URL = "https://api.github.com/repos/${{github.repository}}/pulls/${{github.event.pull_request.number}}/files"
             const URL = "https://api.github.com/repos/jannikreisberg/test-action-linting/pulls/7/files"
             console.log("<- Analyzing following Pull-Request URL ->");
             console.log(URL);
+            console.log("");
             console.log("<- Importing files... ->");
             const file = await github.request(URL);
-            console.log("Files Import Sucessful!");
+            console.log("Files import sucessful!");
+            console.log("");
             console.log("<- GET RAW-File-URL list of Pull-Request ->");
             const raw_urls = file.data.map(file => file.raw_url);
             console.log(raw_urls);
@@ -47,6 +50,7 @@ jobs:
               console.log(raw_url_item);
               }
             }
+            console.log("");
             console.log("<- Erfolgreich ->");
             //
             //
