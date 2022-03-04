@@ -47,7 +47,7 @@ jobs:
               console.log(raw_url_item);
               console.log("<- This file will be OOPS! checked ->");
               var checkingfile = await github.request(raw_url_item);
-              checkingfile = checkingfile.dat;
+              checkingfile = checkingfile.data;
               console.log(checkingfile);
               }
             }
