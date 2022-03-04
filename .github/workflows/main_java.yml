@@ -30,6 +30,7 @@ jobs:
             console.log("<- Get files and check pitfalls ->");
             // const URL = "https://api.github.com/repos/${{github.repository}}/pulls/${{github.event.pull_request.number}}/files"
             const URL = "https://api.github.com/repos/jannikreisberg/test-action-linting/pulls/7/files"
+            const OOPSURL = "http://oops.linkeddata.es/rest"
             console.log("<- Analyzing following Pull-Request URL: " + URL + " ->");
             console.log("<- Importing files... ->");
             const file = await github.request(URL);
@@ -49,6 +50,9 @@ jobs:
               var checkingfile = await github.request(raw_url_item);
               checkingfile = checkingfile.data;
               console.log(checkingfile);
+              console.log("<- OOPS! Callback ->");
+              const feedback = await github.request.post(OOPSURL);
+              console.log(feedback);
               }
             }
             // console.log("<- Erfolgreich ->");
