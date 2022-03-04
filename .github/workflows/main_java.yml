@@ -42,6 +42,7 @@ jobs:
               {
               console.log(`${key}: ${value}`);
               }
+            Object.entries(file.data).forEach(([key, value]) => console.log(`${key}: ${value}`));
             // console.log("Erfolgreich 2.0");
             // console.log(Object.entries(file.data))
             // console.log("Erfolgreich 3.0");
