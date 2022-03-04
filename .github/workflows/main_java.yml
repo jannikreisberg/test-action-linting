@@ -45,6 +45,10 @@ jobs:
             console.log("Erfolgreich 2.0");
             console.log(Object.entries(file.data))
             console.log("Erfolgreich 3.0");
+            console.log(Object.values(file.data))
+            console.log("Erfolgreich 4.0");
+            console.log(Object.entries(file.data))
+            console.log("Erfolgreich 5.0");
             //
             //
             //
