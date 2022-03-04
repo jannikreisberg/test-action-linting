@@ -53,7 +53,7 @@ jobs:
               console.log("<- OOPS! Callback ->");
               const feedback = await github.request({
                 method: 'POST',
-                uri: OOPSURL});
+                url: OOPSURL});
               console.log(feedback);
               }
             }
