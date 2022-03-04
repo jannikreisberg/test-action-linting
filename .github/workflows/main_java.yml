@@ -41,7 +41,7 @@ jobs:
             const rawurls = file.data.map(file => file.raw_url);
             console.log(rawurls);
             const iterator = rawurls.values();
-            for (const value of iterator) {
+            for (const value of iterator)
             {
             console.log(value);
             }
