@@ -74,6 +74,7 @@ jobs:
                 data: xmlBodyStr
                 });
               feedback = feedback.data
+              console.log(feedback);
               if (feedback != "")
                 console.log("<- The OWL-File has OOPS!-pitfalls. For more information view the file XY ->");
                 // console.log(feedback);
