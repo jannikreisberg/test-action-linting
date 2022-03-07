@@ -59,7 +59,7 @@ jobs:
               console.log("<- OOPS! Return to OWL-File ->");
               var axios = require("axios");
               // console.log(axios);
-              var xmlBodyStr = '<?xml version="1.0" encoding="UTF-8"?>
+              var xmlBodyStr = `<?xml version="1.0" encoding="UTF-8"?>
                   <OOPSRequest>
                   <OntologyURI></OntologyURI>
                   <OntologyContent>
@@ -67,7 +67,7 @@ jobs:
                   </OntologyContent>
                   <Pitfalls></Pitfalls>
                   <OutputFormat></OutputFormat>
-                  </OOPSRequest'
+                  </OOPSRequest`
               console.log(xmlBodyStr);
               // var feedback = await axios({
               // method: "post",
