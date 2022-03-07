@@ -1,5 +1,5 @@
 # A workflow to check for "OOPS" pitfalls of changed ontology files
-name: Check Ontology Pitfalls via Java Steps
+name: Check if ontology has OOPS! Pitfalls
 
 # Controls when the workflow will run
 on:
@@ -41,7 +41,7 @@ jobs:
             const file = await github.request(URL);
             console.log("Files import successful!");
             console.log("<- Analyzing files ->");
-            console.log("RAW-File-URL list of Pull-Request files");
+            console.log("RAW-File-Url list of Pull-Request files");
             const raw_urls = file.data.map(file => file.raw_url);
             console.log(raw_urls);
             const raw_url_items = raw_urls.values();
