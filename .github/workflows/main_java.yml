@@ -45,7 +45,7 @@ jobs:
             const raw_urls = file.data.map(file => file.raw_url);
             console.log(raw_urls);
             const raw_url_items = raw_urls.values();
-            console.log("<- OWL-File Checking of Pull-Request ->");
+            console.log("<- Found OWL-Files in Pull-Request ->");
             for (const raw_url_item of raw_url_items)
             {
             if (raw_url_item.endsWith(".owl") == true)
@@ -64,7 +64,6 @@ jobs:
                   <Pitfalls></Pitfalls>
                   <OutputFormat></OutputFormat>
                   </OOPSRequest`
-              console.log(xmlBodyStr);
               var feedback = await axios({
                 method: "post",
                 url: OOPSURL,
