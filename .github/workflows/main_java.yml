@@ -41,16 +41,16 @@ jobs:
             const file = await github.request(URL);
             console.log("<- Files import sucessful! ->");
             console.log("<- Analyzing files ->");
-            console.log("<- RAW-File-URL list of Pull-Request files ->");
+            console.log("RAW-File-URL list of Pull-Request files");
             const raw_urls = file.data.map(file => file.raw_url);
             console.log(raw_urls);
             const raw_url_items = raw_urls.values();
-            console.log("<- Found OWL-Files in Pull-Request ->");
             for (const raw_url_item of raw_url_items)
             {
             if (raw_url_item.endsWith(".owl") == true)
               {
-              console.log("<- This file will be OOPS! checked: " + raw_url_item + " ->");
+              console.log("<- Found OWL-File in Pull-Request ->");
+              console.log("This file will be OOPS! checked: " + raw_url_item);
               var checkingfile = await github.request(raw_url_item);
               checkingfile = checkingfile.data;
               console.log("<- OOPS! Return to OWL-File ->");
@@ -70,7 +70,7 @@ jobs:
                 data: xmlBodyStr
                 });
               feedback = feedback.data
-              console.log("<- The OWL-File got Feedback from !OOPS. For more information view the file below ->");
+              console.log("The OWL-File got feedback from !OOPS. For more information view the file below");
               console.log(feedback);
               }
             }
