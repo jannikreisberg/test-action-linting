@@ -49,12 +49,12 @@ jobs:
               console.log("<- This file will be OOPS! checked ->");
               var checkingfile = await github.request(raw_url_item);
               checkingfile = checkingfile.data;
-              // console.log(checkingfile);
+              console.log(checkingfile);
               console.log("<- OOPS! Return to OWL-File ->");
-              const feedback = await github.request({
-                method: 'POST',
-                url: OOPSURL});
-              console.log(feedback);
+              // const feedback = await github.request({
+              // method: 'POST',
+              // url: OOPSURL});
+              // console.log(feedback);
               }
             }
             // console.log("<- Erfolgreich ->");
