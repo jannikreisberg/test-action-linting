@@ -36,10 +36,10 @@ jobs:
             // const URL = "https://api.github.com/repos/${{github.repository}}/pulls/${{github.event.pull_request.number}}/files"
             const URL = "https://api.github.com/repos/jannikreisberg/test-action-linting/pulls/7/files"
             const OOPSURL = "http://oops.linkeddata.es/rest"
-            console.log("<- Analyzing following Pull-Request URL: " + URL + " ->");
+            console.log("Analyzing following Pull-Request URL: " + URL);
             console.log("<- Importing files... ->");
             const file = await github.request(URL);
-            console.log("<- Files import sucessful! ->");
+            console.log("Files import sucessful!");
             console.log("<- Analyzing files ->");
             console.log("RAW-File-URL list of Pull-Request files");
             const raw_urls = file.data.map(file => file.raw_url);
