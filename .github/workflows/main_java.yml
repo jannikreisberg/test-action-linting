@@ -62,7 +62,17 @@ jobs:
               var feedback = await axios({
                 method: 'post',
                 url: OOPSURL,
-                data: checkingfile
+                data: {
+                  <?xml version="1.0" encoding="UTF-8"?>
+                  <OOPSRequest>
+                  <OntologyURI></OntologyURI>
+                  <OntologyContent>
+                  <![CDATA[]]>
+                  </OntologyContent>
+                  <Pitfalls></Pitfalls>
+                  <OutputFormat></OutputFormat>
+                  </OOPSRequest
+                }
               });
               // console.log(feedback);
               // const feedback = await github.request({
