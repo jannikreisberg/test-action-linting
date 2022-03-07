@@ -32,8 +32,7 @@ jobs:
        - uses: actions/github-script@v6
          with:
           script: |
-            // Get changed files and run OOPs pitfalls
-            console.log("<- Get files and check pitfalls ->");
+            console.log("<- Get files and check OOPS! pitfalls ->");
             // const URL = "https://api.github.com/repos/${{github.repository}}/pulls/${{github.event.pull_request.number}}/files"
             const URL = "https://api.github.com/repos/jannikreisberg/test-action-linting/pulls/7/files"
             const OOPSURL = "http://oops.linkeddata.es/rest"
@@ -55,10 +54,8 @@ jobs:
               console.log(raw_url_item);
               var checkingfile = await github.request(raw_url_item);
               checkingfile = checkingfile.data;
-              // console.log(checkingfile);
               console.log("<- OOPS! Return to OWL-File ->");
               var axios = require("axios");
-              // console.log(axios);
               var xmlBodyStr = `<?xml version="1.0" encoding="UTF-8"?>
                   <OOPSRequest>
                   <OntologyURI></OntologyURI>
@@ -68,13 +65,14 @@ jobs:
                   <Pitfalls></Pitfalls>
                   <OutputFormat></OutputFormat>
                   </OOPSRequest`
-              // console.log(xmlBodyStr);
               var feedback = await axios({
                 method: "post",
                 url: OOPSURL,
                 data: xmlBodyStr
                 });
               feedback = feedback.data
-              console.log(feedback);
+              if (feedback.data != "")
+                console.log("<- The OWL-File has OOPS!-pitfalls. For more information view the file "feedback" ->")
+                // console.log(feedback);
               }
             }
