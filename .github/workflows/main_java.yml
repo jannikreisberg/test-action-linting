@@ -74,6 +74,7 @@ jobs:
                 url: OOPSURL,
                 data: xmlBodyStr
                 });
+              feedback = feedback.data
               console.log(feedback);
               // const feedback = await github.request({
               // method: 'POST',
