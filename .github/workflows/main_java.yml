@@ -60,8 +60,9 @@ jobs:
               var axios = require('axios');
               // console.log(axios);
               var feedback = await axios({
-                method: 'get',
-                url: OOPSURL
+                method: 'post',
+                url: OOPSURL,
+                data: checkingfile
               });
               // console.log(feedback);
               // const feedback = await github.request({
