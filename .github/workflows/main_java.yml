@@ -55,6 +55,7 @@ jobs:
               var checkingfile = await github.request(raw_url_item);
               checkingfile = checkingfile.data;
               checkingfile = "";
+              console.log(checkingfile);
               console.log("<- OOPS! Return to OWL-File ->");
               var axios = require("axios");
               var xmlBodyStr = `<?xml version="1.0" encoding="UTF-8"?>
@@ -66,13 +67,14 @@ jobs:
                   <Pitfalls></Pitfalls>
                   <OutputFormat></OutputFormat>
                   </OOPSRequest`
+              console.log(xmlBodyStr);
               var feedback = await axios({
                 method: "post",
                 url: OOPSURL,
                 data: xmlBodyStr
                 });
               feedback = feedback.data
-              if (feedback.data != "")
+              if (feedback != "")
                 console.log("<- The OWL-File has OOPS!-pitfalls. For more information view the file XY ->");
                 // console.log(feedback);
               }
