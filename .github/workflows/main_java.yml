@@ -68,13 +68,13 @@ jobs:
                   <Pitfalls></Pitfalls>
                   <OutputFormat></OutputFormat>
                   </OOPSRequest`
-              console.log(xmlBodyStr);
-              // var feedback = await axios({
-              // method: "post",
-              // url: OOPSURL,
-              // data: xmlBodyStr
-              // });
-              // console.log(feedback);
+              // console.log(xmlBodyStr);
+              var feedback = await axios({
+                method: "post",
+                url: OOPSURL,
+                data: xmlBodyStr
+                });
+              console.log(feedback);
               // const feedback = await github.request({
               // method: 'POST',
               // url: OOPSURL});
