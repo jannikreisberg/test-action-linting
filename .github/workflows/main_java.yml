@@ -76,58 +76,5 @@ jobs:
                 });
               feedback = feedback.data
               console.log(feedback);
-              // const feedback = await github.request({
-              // method: 'POST',
-              // url: OOPSURL});
               }
             }
-            // console.log("<- Erfolgreich ->");
-            //
-            //
-            //
-            // Object.entries(file.data).forEach(([key, value]) => console.log(`${key}: ${value}`));
-            // console.log("Erfolgreich 2.0");
-            // console.log(Object.entries(file.data))
-            // console.log("Erfolgreich 3.0");
-            // console.log(Object.values(file.data))
-            // console.log("Erfolgreich 4.0");
-            // console.log(Object.entries(file.data))
-            // console.log("Erfolgreich 5.0");
-            //
-            //
-            //
-            // console.log(file.raw_url);
-            // var fs = require('fs');
-            // var files = fs.readdirSync(URL);
-            // console.log(files);
-            // console.log("Erfolgreich");
-            // OOPS HTTP Request with Found Data
-            // const OOPSURL = "http://oops.linkeddata.es/rest"
-            // console.log(OOPSURL);
-            // const HTTPDATA = {
-            //  "<?xml version="1.0" encoding="UTF-8"?>
-            //    <OOPSRequest>
-            //    <OntologyURI>
-            //    https://raw.githubusercontent.com/hsu-aut/IndustrialStandard-ODP-DIN8580/master/DIN8580.owl
-            //    </OntologyURI>
-            //    <OntologyContent>
-            //    </OntologyContent>
-            //    <Pitfalls></Pitfalls>
-            //    <OutputFormat></OutputFormat>
-            //    </OOPSRequest>
-            // "};
-            // console.log(HTTPDATA);
-            // http Request Parameters
-            // const otherParameters = {
-            //   body: Data
-            // };
-            // fetch(OOPSURL, otherParameters)
-            //  .then(data=>{return data.json()})
-            //  .then(res=>{console.log(res)})
-            //  .catch(error=>console.log(error))
-            //  console.log("Erfolgreich 2.0");
-            //  FILES=$(curl -s -X GET -G $URL | jq -r '.[] | .filename')
-            //    for f in $FILES 
-            //    do 
-            //      if [[ $f == *".owl"* ]]; then
-            //      console.log(URL);
