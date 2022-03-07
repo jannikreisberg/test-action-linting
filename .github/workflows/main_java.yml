@@ -54,7 +54,7 @@ jobs:
               console.log("This file will be OOPS! checked. ");
               var checkingfile = await github.request(raw_url_item);
               checkingfile = checkingfile.data;
-              console.log("<- OOPS! Return to OWL-File ->");
+              console.log("<- OOPS! feedback to OWL-File ->");
               var axios = require("axios");
               var xmlBodyStr = `<?xml version="1.0" encoding="UTF-8"?>
                   <OOPSRequest>
@@ -73,6 +73,6 @@ jobs:
               feedback = feedback.data
               console.log("The OWL-File got feedback from !OOPS. For more information view the file below:");
               console.log(feedback);
-              console.log("FINISH CHECK-PITFALLS");
+              console.log("FINISH CHECK-PITFALLS SUCCESSFULL");
               }
             }
