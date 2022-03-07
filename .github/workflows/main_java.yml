@@ -74,5 +74,5 @@ jobs:
                 url: OOPSURL,
                 data: xmlBodyStr
                 });
-              feedback = data.feedback;
-              console.log(feedback);
+              // feedback = data.feedback;
+              // console.log(feedback);
