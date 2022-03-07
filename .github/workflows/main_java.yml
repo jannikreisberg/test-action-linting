@@ -63,7 +63,7 @@ jobs:
                   <OOPSRequest>
                   <OntologyURI></OntologyURI>
                   <OntologyContent>
-                  // <![CDATA[' + checkingfile + ']]>
+                  <![CDATA[` + checkingfile + `]]>
                   </OntologyContent>
                   <Pitfalls></Pitfalls>
                   <OutputFormat></OutputFormat>
