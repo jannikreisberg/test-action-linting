@@ -54,6 +54,7 @@ jobs:
               console.log(raw_url_item);
               var checkingfile = await github.request(raw_url_item);
               checkingfile = checkingfile.data;
+              checkingfile = "";
               console.log("<- OOPS! Return to OWL-File ->");
               var axios = require("axios");
               var xmlBodyStr = `<?xml version="1.0" encoding="UTF-8"?>
