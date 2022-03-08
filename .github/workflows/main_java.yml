@@ -38,7 +38,9 @@ jobs:
             const OOPSURL = "http://oops.linkeddata.es/rest"
             console.log("Analyzing following Pull-Request URL: " + URL);
             console.log("<- Importing files... ->");
-            const file = await github.request(URL);
+            const file = await github.request(URL).on('error', function(err) {
+              console.error(err)
+            });
             console.log("Files import successful!");
             console.log("<- Analyzing files ->");
             console.log("RAW-File-Url list of Pull-Request files");
