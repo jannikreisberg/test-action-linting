@@ -38,13 +38,14 @@ jobs:
             const OOPSURL = "http://oops.linkeddata.es/rest"
             console.log("Analyzing following Pull-Request URL: " + URL);
             console.log("<- Importing files... ->");
-            const file = await github.request(URL).on('error', function(err) {
-              console.error(err)
-            });
+            const files = await github.request(URL);
+            // const files = await github.request(URL).on('error', function(err) {
+            // console.error(err)
+            // });
             console.log("Files import successful!");
             console.log("<- Analyzing files ->");
             console.log("RAW-File-Url list of Pull-Request files");
-            const raw_urls = file.data.map(file => file.raw_url);
+            const raw_urls = files.data.map(files => files.raw_url);
             console.log(raw_urls);
             const raw_url_items = raw_urls.values();
             for (const raw_url_item of raw_url_items)
