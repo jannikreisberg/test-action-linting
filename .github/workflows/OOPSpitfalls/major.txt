@@ -1,0 +1,4 @@
+var major = "2,3"
+// Zwei Dateien, einmal für Minor, einmal für Major - in einem Ordner in .githubjobs... 
+// Iteration über die Dateien. Wenn Major aktiv -> Ablehnung des Jobs 
+//                             Wenn Minor aktiv -> Feedback, aber dennoch Job angenommen
