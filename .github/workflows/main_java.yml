@@ -70,7 +70,7 @@ jobs:
               var feedbackminor = await axios({
               method: "post",
               url: OOPSURL,
-              data: xmlBodyStr
+              data: xmlBodyStrminor
               });
               feedbackminor = feedbackminor.data
               var xmlBodyStrmajor = `<?xml version="1.0" encoding="UTF-8"?>
@@ -85,7 +85,7 @@ jobs:
               var feedbackmajor = await axios({
               method: "post",
               url: OOPSURL,
-              data: xmlBodyStr
+              data: xmlBodyStrmajor
               });
               feedbackmajor = feedbackmajor.data
               console.log("The OWL-File got feedback from !OOPS. For more information view the file below:");
