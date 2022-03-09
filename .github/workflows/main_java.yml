@@ -90,7 +90,7 @@ jobs:
               });
               feedbackmajor = feedbackmajor.data
               console.log("The OWL-File got feedback from !OOPS. For more information view the file below:");
-              if (raw_url_item.endsWith(".owl") == )
+              // if (raw_url_item.endsWith(".owl") == )
               console.log(positiveFeedback.data);
               console.log(feedbackminor);
               console.log(feedbackmajor);
