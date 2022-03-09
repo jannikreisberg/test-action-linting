@@ -74,7 +74,7 @@ jobs:
               url: OOPSURL,
               data: xmlBodyStrminor
               });
-              feedbackminor = feedbackminor.data
+              feedbackminor = feedbackminor.data;
               var xmlBodyStrmajor = `<?xml version="1.0" encoding="UTF-8"?>
                   <OOPSRequest>
                   <OntologyURI></OntologyURI>
@@ -89,8 +89,8 @@ jobs:
               url: OOPSURL,
               data: xmlBodyStrmajor
               });
-              feedbackmajor = feedbackmajor.data
-              const splitFile = new SplitFile();
+              feedbackmajor = feedbackmajor.data;
+              const splitFile = require('split-file');
               console.log("The OWL-File got feedback from !OOPS. For more information view the file below:");
               console.log("positiveFeedback");
               console.log(positiveFeedback.data);
