@@ -28,6 +28,7 @@ jobs:
     #      node-version: 14
     #   - run: npm ci
        - run: npm install axios
+       - run: npm install js-split-file
        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
        - uses: actions/github-script@v6
          with:
@@ -89,6 +90,7 @@ jobs:
               data: xmlBodyStrmajor
               });
               feedbackmajor = feedbackmajor.data
+              import SplitFile from "js-split-file";
               console.log("The OWL-File got feedback from !OOPS. For more information view the file below:");
               console.log("positiveFeedback");
               console.log(positiveFeedback.data);
