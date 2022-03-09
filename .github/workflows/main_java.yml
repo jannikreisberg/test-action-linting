@@ -90,6 +90,7 @@ jobs:
               });
               feedbackmajor = feedbackmajor.data
               console.log("The OWL-File got feedback from !OOPS. For more information view the file below:");
+              console.log("positiveFeedback");
               console.log(positiveFeedback.data);
               console.log("feedbackminor");
               console.log(feedbackminor);
