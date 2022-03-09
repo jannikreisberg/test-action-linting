@@ -38,9 +38,9 @@ jobs:
             const OOPSURL = "http://oops.linkeddata.es/rest"
             // const major = await github.request("https://api.github.com/repos/${{github.repository}}/.github/workflows/OOPSpitfalls/major.txt")
             const major = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSpitfalls/major.txt")
-            console.log(major);
+            console.log(major.data);
             const minor = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSpitfalls/minor.txt")
-            console.log(minor);
+            console.log(minor.data);
             console.log("Analyzing following Pull-Request URL: " + URL);
             console.log("<- Importing files... ->");
             const files = await github.request(URL);
@@ -67,9 +67,10 @@ jobs:
                   <OntologyContent>
                   <![CDATA[` + checkingfile + `]]>
                   </OntologyContent>
-                  <Pitfalls></Pitfalls>
+                  <Pitfalls>major.data</Pitfalls>
                   <OutputFormat></OutputFormat>
                   </OOPSRequest`
+              console.log(xmlBodyStr);
               var feedback = await axios({
                 method: "post",
                 url: OOPSURL,
