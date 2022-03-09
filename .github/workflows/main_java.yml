@@ -38,7 +38,7 @@ jobs:
             const OOPSURL = "http://oops.linkeddata.es/rest"
             // const major = await github.request("https://api.github.com/repos/${{github.repository}}/.github/workflows/OOPSpitfalls/major.txt")
             const major = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSpitfalls/major.txt")
-            console.log(major.data);
+            console.log(major);
             // const minor = 
             console.log("Analyzing following Pull-Request URL: " + URL);
             console.log("<- Importing files... ->");
