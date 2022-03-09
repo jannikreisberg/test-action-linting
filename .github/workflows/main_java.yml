@@ -44,7 +44,7 @@ jobs:
             // });
             console.log("Files import successful!");
             console.log("<- Analyzing files ->");
-            console.log("RAW-File-Url list of Pull-Request files");
+            console.log("RAW-File-Url list of Pull-Request files:");
             const raw_urls = files.data.map(files => files.raw_url);
             console.log(raw_urls);
             const raw_url_items = raw_urls.values();
@@ -52,7 +52,7 @@ jobs:
             {
             if (raw_url_item.endsWith(".owl") == true)
               {
-              console.log("<- Found OWL-File in Pull-Request ->");
+              console.log("<- Found OWL-Files in Pull-Request ->");
               console.log(raw_url_item);
               console.log("This file will be OOPS! checked. ");
               var checkingfile = await github.request(raw_url_item);
