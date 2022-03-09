@@ -90,7 +90,7 @@ jobs:
               data: xmlBodyStrmajor
               });
               feedbackmajor = feedbackmajor.data
-              import SplitFile from "js-split-file";
+              const splitFile = new SplitFile();
               console.log("The OWL-File got feedback from !OOPS. For more information view the file below:");
               console.log("positiveFeedback");
               console.log(positiveFeedback.data);
