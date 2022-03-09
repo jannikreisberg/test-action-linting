@@ -36,7 +36,8 @@ jobs:
             // const URL = "https://api.github.com/repos/${{github.repository}}/pulls/${{github.event.pull_request.number}}/files"
             const URL = "https://api.github.com/repos/jannikreisberg/test-action-linting/pulls/7/files"
             const OOPSURL = "http://oops.linkeddata.es/rest"
-            const major = await github.request("https://api.github.com/repos/${{github.repository}}/.github/workflows/OOPSpitfalls/major.txt")
+            // const major = await github.request("https://api.github.com/repos/${{github.repository}}/.github/workflows/OOPSpitfalls/major.txt")
+            const major = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSpitfalls/major.txt")
             console.log("Test-Dummie: " + major);
             // const minor = 
             console.log("Analyzing following Pull-Request URL: " + URL);
