@@ -67,7 +67,7 @@ jobs:
                   <OntologyContent>
                   <![CDATA[` + checkingfile + `]]>
                   </OntologyContent>
-                  <Pitfalls>major.data</Pitfalls>
+                  <Pitfalls>` + major.data + `</Pitfalls>
                   <OutputFormat></OutputFormat>
                   </OOPSRequest`
               console.log(xmlBodyStr);
