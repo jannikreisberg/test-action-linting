@@ -58,7 +58,7 @@ jobs:
               checkingfile = checkingfile.data;
               console.log("<- OOPS! feedback to OWL-File ->");
               var axios = require("axios");
-              var xmlBodyStr = `<?xml version="1.0" encoding="UTF-8"?>
+              var xmlBodyStrminor = `<?xml version="1.0" encoding="UTF-8"?>
                   <OOPSRequest>
                   <OntologyURI></OntologyURI>
                   <OntologyContent>
@@ -67,14 +67,30 @@ jobs:
                   <Pitfalls>` + minor.data + `</Pitfalls>
                   <OutputFormat></OutputFormat>
                   </OOPSRequest`
-              var feedback = await axios({
+              var feedbackminor = await axios({
               method: "post",
               url: OOPSURL,
               data: xmlBodyStr
               });
-              feedback = feedback.data
+              feedbackminor = feedbackminor.data
+              var xmlBodyStrmajor = `<?xml version="1.0" encoding="UTF-8"?>
+                  <OOPSRequest>
+                  <OntologyURI></OntologyURI>
+                  <OntologyContent>
+                  <![CDATA[` + checkingfile + `]]>
+                  </OntologyContent>
+                  <Pitfalls>` + major.data + `</Pitfalls>
+                  <OutputFormat></OutputFormat>
+                  </OOPSRequest`
+              var feedbackmajor = await axios({
+              method: "post",
+              url: OOPSURL,
+              data: xmlBodyStr
+              });
+              feedbackmajor = feedbackmajor.data
               console.log("The OWL-File got feedback from !OOPS. For more information view the file below:");
-              console.log(feedback);
+              console.log(feedbackminor);
+              console.log(feedbackmajor);
               console.log("FINISH CHECK-PITFALLS SUCCESSFULL");
               }
             }
