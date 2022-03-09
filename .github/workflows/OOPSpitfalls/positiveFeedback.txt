@@ -4,3 +4,4 @@
     xmlns:oops="http://oops.linkeddata.es/def#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" > 
+  <rdf:Description rdf:about="http://oops.linkeddata.es/def#suggestion">
