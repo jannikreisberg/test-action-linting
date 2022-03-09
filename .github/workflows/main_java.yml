@@ -90,12 +90,16 @@ jobs:
               });
               feedbackmajor = feedbackmajor.data
               console.log("The OWL-File got feedback from !OOPS. For more information view the file below:");
-              // if (raw_url_item.endsWith(".owl") == )
               console.log(positiveFeedback.data);
               console.log("feedbackminor");
               console.log(feedbackminor);
               console.log("feedbackmajor");
               console.log(feedbackmajor);
+              console.log("Test der IF-Schleife");
+              if (feedbackminor == positiveFeedback.data)
+                console.log("Das stimmt.");
+              if (feedbackmajor == positiveFeedback.data)
+                console.log("Das stimmt.");
               console.log("FINISH CHECK-PITFALLS SUCCESSFULL");
               }
             }
