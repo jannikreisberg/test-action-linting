@@ -29,6 +29,7 @@ jobs:
     #   - run: npm ci
        - run: npm install axios
        - run: npm install js-split-file
+       - run: import SplitFile from "js-split-file";
        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
        - uses: actions/github-script@v6
          with:
