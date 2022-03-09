@@ -71,14 +71,14 @@ jobs:
                   <OutputFormat></OutputFormat>
                   </OOPSRequest`
               console.log(xmlBodyStr);
-              // var feedback = await axios({
-              //  method: "post",
-              //  url: OOPSURL,
-              //  data: xmlBodyStr
-              //  });
-              // feedback = feedback.data
-              // console.log("The OWL-File got feedback from !OOPS. For more information view the file below:");
-              // console.log(feedback);
+              var feedback = await axios({
+              method: "post",
+              url: OOPSURL,
+              data: xmlBodyStr
+              });
+              feedback = feedback.data
+              console.log("The OWL-File got feedback from !OOPS. For more information view the file below:");
+              console.log(feedback);
               console.log("FINISH CHECK-PITFALLS SUCCESSFULL");
               }
             }
