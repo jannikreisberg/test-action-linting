@@ -104,7 +104,7 @@ jobs:
               if (feedbackminor.length > positiveFeedback.length)
                 {
                 console.log("Minor hat OOPS Pitfalls");
-                } ELSE {
+                } else {
                 console.log("Minor hat keine OOPS Pitfalls");
                 };
               // if (feedbackmajor.length > positiveFeedback.length) {
