@@ -91,6 +91,7 @@ jobs:
               data: xmlBodyStrmajor
               });
               feedbackmajor = feedbackmajor.data;
+              console.log("<- OOPS Reports ->");
               console.log("The OWL-File got feedback from !OOPS.");
               console.log("OOPS Feedback to MINOR Pitfalls");
               console.log("feedbackminor Pitfalls: " + minor.data);
