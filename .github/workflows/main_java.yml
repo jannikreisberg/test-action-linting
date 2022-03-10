@@ -101,11 +101,11 @@ jobs:
               console.log("feedbackmajor Zeichenzahl: " + feedbackmajor.length);
               console.log(feedbackmajor);
               console.log("Test der IF-Schleife");
-              // if (feedbackminor.length > positiveFeedback.length){
-              //   console.log("Minor hat OOPS Pitfalls");
-              //   } ELSE {
-              //   console.log("Minor hat keine OOPS Pitfalls");
-              //   };
+              if (feedbackminor.length > positiveFeedback.length){
+                console.log("Minor hat OOPS Pitfalls");
+                } ELSE {
+                console.log("Minor hat keine OOPS Pitfalls");
+                };
               // if (feedbackmajor.length > positiveFeedback.length){
               //   console.log("Major hat OOPS Pitfalls");
               //   } ELSE {
