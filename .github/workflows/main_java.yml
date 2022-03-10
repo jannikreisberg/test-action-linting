@@ -93,8 +93,10 @@ jobs:
               console.log("The OWL-File got feedback from !OOPS. For more information view the file below:");
               // console.log("positiveFeedback Zeichenzahl: " + positiveFeedback.length);
               // console.log(positiveFeedback.data);
+              console.log("feedbackminor Pitfalls: " + minor.data);
               console.log("feedbackminor Zeichenzahl: " + feedbackminor.length);
               console.log(feedbackminor);
+              console.log("feedbackmajor Pitfalls: " + major.data);
               console.log("feedbackmajor Zeichenzahl: " + feedbackmajor.length);
               console.log(feedbackmajor);
               // Test von LineReader
