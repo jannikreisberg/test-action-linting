@@ -93,23 +93,25 @@ jobs:
               feedbackmajor = feedbackmajor.data;
               console.log("<- OOPS Reports ->");
               console.log("The OWL-File got feedback from !OOPS.");
-              console.log("OOPS Feedback to MINOR Pitfalls");
-              console.log("feedbackminor Pitfalls: " + minor.data);
+              console.log("<- OOPS Feedback to MINOR Pitfalls ->");
+              console.log("Analyzed MINOR-Pitfalls: " + minor.data);
               if (feedbackminor.length > positiveFeedback.length)
                 {
                 console.log("Minor hat OOPS Pitfalls");
                 } else {
                 console.log("Minor hat keine OOPS Pitfalls");
                 };
+              console.log(OOPS-Minor-Pitfalls-Feedback:);
               console.log(feedbackminor);
-              console.log("OOPS Feedback to MAJOR Pitfalls");
-              console.log("feedbackmajor Pitfalls: " + major.data);
+              console.log("<- OOPS Feedback to MAJOR Pitfalls  ->");
+              cconsole.log("Analyzed MAJOR-Pitfalls: " + major.data);
               if (feedbackmajor.length > positiveFeedback.length)
                 {
                 console.log("Major hat OOPS Pitfalls");
                 } else {
                 console.log("Major hat keine OOPS Pitfalls");
                 };
+              console.log(OOPS-Major-Pitfalls-Feedback:);
               console.log(feedbackmajor);
               console.log("");
               console.log("FINISH CHECK-PITFALLS SUCCESSFULL");
