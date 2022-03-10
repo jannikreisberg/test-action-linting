@@ -103,16 +103,16 @@ jobs:
               lineReader.eachLine(
                 'feedbackminor', function(line, last)
                 {
-                  console.log("Zeile 1: " + line);
-                  if (/* done */) {
-                    return false; // stop reading
-                    }
+               //   console.log("Zeile 1: " + line);
+               //   if (/* done */) {
+               //     return false; // stop reading
+               //     }
                 }
               );
               // if (feedbackminor == positiveFeedback[Zeile1-8].data)
-                console.log("Das stimmt.");
+                console.log("Das stimmt minor.");
               if (feedbackmajor == positiveFeedback.data)
-                console.log("Das stimmt.");
+                console.log("Das stimmt major.");
               console.log("FINISH CHECK-PITFALLS SUCCESSFULL");
               }
             }
