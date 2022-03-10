@@ -108,8 +108,8 @@ jobs:
                //     return false; // stop reading
                //     }
                 }
-              console.log(lineReader);  
               );
+              console.log();  
               // if (feedbackminor == positiveFeedback[Zeile1-8].data)
               //  console.log("Das stimmt minor.");
               // if (feedbackmajor == positiveFeedback.data)
