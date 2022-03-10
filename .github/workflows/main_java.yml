@@ -100,23 +100,11 @@ jobs:
               console.log("feedbackmajor Pitfalls: " + major.data);
               console.log("feedbackmajor Zeichenzahl: " + feedbackmajor.length);
               console.log(feedbackmajor);
-              // Test von LineReader
-              // var lineReader = require('line-reader');
-              // lineReader.eachLine(
-              //  'feedbackminor', function(line, last)
-              //  {
-              //    console.log("Zeile 1: " + line);
-              //   if (/* done */) {
-              //     return false; // stop reading
-              //     }
-              //  }
-              //);
               console.log("Test der IF-Schleife");
-              // console.log(lineReader);  
-              // if (feedbackminor == positiveFeedback)
-              //  console.log("Das stimmt minor.");
-              // if (feedbackmajor == positiveFeedback)
-              //  console.log("Das stimmt major.");
-              //  console.log("FINISH CHECK-PITFALLS SUCCESSFULL");
+                if (feedbackminor.length > positiveFeedback.length)
+                  console.log("Minor hat OOPS Pitfalls");
+                if (feedbackmajor.length > positiveFeedback.length)
+                  console.log("Major hat OOPS Pitfalls");
+                  console.log("FINISH CHECK-PITFALLS SUCCESSFULL");
               }
             }
