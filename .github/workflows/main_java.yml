@@ -108,11 +108,12 @@ jobs:
                //     return false; // stop reading
                //     }
                 }
+              console.log(lineReader);  
               );
               // if (feedbackminor == positiveFeedback[Zeile1-8].data)
-                console.log("Das stimmt minor.");
-              if (feedbackmajor == positiveFeedback.data)
-                console.log("Das stimmt major.");
-              console.log("FINISH CHECK-PITFALLS SUCCESSFULL");
+              //  console.log("Das stimmt minor.");
+              // if (feedbackmajor == positiveFeedback.data)
+              //  console.log("Das stimmt major.");
+              //  console.log("FINISH CHECK-PITFALLS SUCCESSFULL");
               }
             }
