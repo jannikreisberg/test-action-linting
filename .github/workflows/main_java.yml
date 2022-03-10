@@ -40,7 +40,7 @@ jobs:
             const major = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSpitfalls/major.txt")
             const minor = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSpitfalls/minor.txt")
             const positiveFeedback = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSpitfalls/positiveFeedback.txt")
-            const positiveFeedback = positiveFeedback.data;
+            positiveFeedback = positiveFeedback.data;
             console.log("Analyzing following Pull-Request URL: " + URL);
             console.log("<- Importing files... ->");
             const files = await github.request(URL);
