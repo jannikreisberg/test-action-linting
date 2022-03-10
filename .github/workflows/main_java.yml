@@ -107,11 +107,12 @@ jobs:
                 } else {
                 console.log("Minor hat keine OOPS Pitfalls");
                 };
-              // if (feedbackmajor.length > positiveFeedback.length) {
-              //   console.log("Major hat OOPS Pitfalls");
-              //   } ELSE {
-              //   console.log("Major hat keine OOPS Pitfalls");
-              //   };
+              if (feedbackmajor.length > positiveFeedback.length)
+                {
+                console.log("Major hat OOPS Pitfalls");
+                } else {
+                console.log("Major hat keine OOPS Pitfalls");
+                };
               console.log("FINISH CHECK-PITFALLS SUCCESSFULL");
               }
             }
