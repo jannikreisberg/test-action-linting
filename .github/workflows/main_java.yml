@@ -40,6 +40,7 @@ jobs:
             const major = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSpitfalls/major.txt")
             const minor = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSpitfalls/minor.txt")
             const positiveFeedback = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSpitfalls/positiveFeedback.txt")
+            const positiveFeedback = positiveFeedback.data;
             console.log("Analyzing following Pull-Request URL: " + URL);
             console.log("<- Importing files... ->");
             const files = await github.request(URL);
@@ -92,7 +93,7 @@ jobs:
               feedbackmajor = feedbackmajor.data;
               console.log("The OWL-File got feedback from !OOPS. For more information view the file below:");
               console.log("positiveFeedback Zeichenzahl: " + positiveFeedback.length);
-              console.log(positiveFeedback.data);
+              console.log(positiveFeedback);
               console.log("feedbackminor Pitfalls: " + minor.data);
               console.log("feedbackminor Zeichenzahl: " + feedbackminor.length);
               console.log(feedbackminor);
@@ -112,9 +113,9 @@ jobs:
               //);
               console.log("Test der IF-Schleife");
               // console.log(lineReader);  
-              // if (feedbackminor == positiveFeedback[Zeile1-8].data)
+              // if (feedbackminor == positiveFeedback)
               //  console.log("Das stimmt minor.");
-              // if (feedbackmajor == positiveFeedback.data)
+              // if (feedbackmajor == positiveFeedback)
               //  console.log("Das stimmt major.");
               //  console.log("FINISH CHECK-PITFALLS SUCCESSFULL");
               }
