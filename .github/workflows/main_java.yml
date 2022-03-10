@@ -104,7 +104,7 @@ jobs:
               console.log("OOPS-Minor-Pitfalls-Feedback: ");
               console.log(feedbackminor);
               console.log("<- OOPS Feedback to MAJOR Pitfalls  ->");
-              cconsole.log("Analyzed MAJOR-Pitfalls: " + major.data);
+              console.log("Analyzed MAJOR-Pitfalls: " + major.data);
               if (feedbackmajor.length > positiveFeedback.length)
                 {
                 console.log("Major hat OOPS Pitfalls");
