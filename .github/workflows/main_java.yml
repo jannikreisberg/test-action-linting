@@ -107,7 +107,7 @@ jobs:
               console.log("Analyzed MAJOR-Pitfalls: " + major.data);
               if (feedbackmajor.length > positiveFeedback.length)
                 {
-                console.log("Major has OOPS! Pitfalls");
+                core.setFailed('Your ontology is OOPS! MAJOR Pitfalls. Please make sure to fix pitfalls before merging.')
                 } else {
                 console.log("Major has no OOPS! Pitfalls");
                 };
