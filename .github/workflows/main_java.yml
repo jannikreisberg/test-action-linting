@@ -116,7 +116,7 @@ jobs:
               console.log("OOPS!-Major-Pitfalls-Feedback: ");
               console.log(feedbackmajor);
               console.log("");
-              if (controllvar.length > 0)
+              if (controllvar > 0)
                 {
                 core.setFailed('Your ontology has OOPS! MAJOR Pitfalls. Please make sure to fix pitfalls before merging.')
                 }
