@@ -41,6 +41,7 @@ jobs:
             const minor = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSpitfalls/minor.txt")
             var positiveFeedback = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSpitfalls/positiveFeedback.txt")
             positiveFeedback = positiveFeedback.data;
+            var controllvar = 0;
             console.log("Analyzing following Pull-Request URL: " + URL);
             console.log("<- Importing files... ->");
             const files = await github.request(URL);
@@ -97,9 +98,9 @@ jobs:
               console.log("Analyzed MINOR-Pitfalls: " + minor.data);
               if (feedbackminor.length > positiveFeedback.length)
                 {
-                console.log("Minor has OOPS! Pitfalls");
+                console.log("OWL File has MINOR-OOPS! Pitfalls");
                 } else {
-                console.log("Minor has no OOPS! Pitfalls");
+                console.log("OWL File has no MINOR-OOPS! Pitfalls");
                 };
               console.log("OOPS!-Minor-Pitfalls-Feedback: ");
               console.log(feedbackminor);
@@ -107,13 +108,17 @@ jobs:
               console.log("Analyzed MAJOR-Pitfalls: " + major.data);
               if (feedbackmajor.length > positiveFeedback.length)
                 {
-                core.setFailed('Your ontology is OOPS! MAJOR Pitfalls. Please make sure to fix pitfalls before merging.')
+                controllvar += 1;
+                console.log("OWL File has MAJOR-OOPS! Pitfalls");
                 } else {
-                console.log("Major has no OOPS! Pitfalls");
+                console.log("OWL File has no MAJOR-OOPS! Pitfalls");
                 };
               console.log("OOPS!-Major-Pitfalls-Feedback: ");
               console.log(feedbackmajor);
               console.log("");
-              console.log("FINISH CHECK-PITFALLS SUCCESSFULL");
+              if (controllvar.length > 0)
+                {
+                core.setFailed('Your ontology has OOPS! MAJOR Pitfalls. Please make sure to fix pitfalls before merging.')
+                }
               }
             }
