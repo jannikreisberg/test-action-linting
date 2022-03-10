@@ -101,7 +101,7 @@ jobs:
                 } else {
                 console.log("Minor hat keine OOPS Pitfalls");
                 };
-              console.log(OOPS-Minor-Pitfalls-Feedback:);
+              console.log("OOPS-Minor-Pitfalls-Feedback: ");
               console.log(feedbackminor);
               console.log("<- OOPS Feedback to MAJOR Pitfalls  ->");
               cconsole.log("Analyzed MAJOR-Pitfalls: " + major.data);
@@ -111,7 +111,7 @@ jobs:
                 } else {
                 console.log("Major hat keine OOPS Pitfalls");
                 };
-              console.log(OOPS-Major-Pitfalls-Feedback:);
+              console.log("OOPS-Major-Pitfalls-Feedback: ");
               console.log(feedbackmajor);
               console.log("");
               console.log("FINISH CHECK-PITFALLS SUCCESSFULL");
