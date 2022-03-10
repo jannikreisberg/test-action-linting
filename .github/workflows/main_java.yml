@@ -91,28 +91,26 @@ jobs:
               data: xmlBodyStrmajor
               });
               feedbackmajor = feedbackmajor.data;
-              console.log("The OWL-File got feedback from !OOPS. For more information view the file below:");
-              console.log("positiveFeedback Zeichenzahl: " + positiveFeedback.length);
-              console.log(positiveFeedback);
+              console.log("The OWL-File got feedback from !OOPS.");
+              console.log("OOPS Feedback to MINOR Pitfalls");
               console.log("feedbackminor Pitfalls: " + minor.data);
-              console.log("feedbackminor Zeichenzahl: " + feedbackminor.length);
-              console.log(feedbackminor);
-              console.log("feedbackmajor Pitfalls: " + major.data);
-              console.log("feedbackmajor Zeichenzahl: " + feedbackmajor.length);
-              console.log(feedbackmajor);
-              console.log("Test der IF-Schleife");
               if (feedbackminor.length > positiveFeedback.length)
                 {
                 console.log("Minor hat OOPS Pitfalls");
                 } else {
                 console.log("Minor hat keine OOPS Pitfalls");
                 };
+              console.log(feedbackminor);
+              console.log("OOPS Feedback to MAJOR Pitfalls");
+              console.log("feedbackmajor Pitfalls: " + major.data);
               if (feedbackmajor.length > positiveFeedback.length)
                 {
                 console.log("Major hat OOPS Pitfalls");
                 } else {
                 console.log("Major hat keine OOPS Pitfalls");
                 };
+              console.log(feedbackmajor);
+              console.log("");
               console.log("FINISH CHECK-PITFALLS SUCCESSFULL");
               }
             }
