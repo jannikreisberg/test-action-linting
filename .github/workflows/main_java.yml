@@ -39,7 +39,7 @@ jobs:
             const OOPSURL = "http://oops.linkeddata.es/rest"
             const major = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSpitfalls/major.txt")
             const minor = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSpitfalls/minor.txt")
-            // const positiveFeedback = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSpitfalls/positiveFeedback.txt")
+            const positiveFeedback = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSpitfalls/positiveFeedback.txt")
             console.log("Analyzing following Pull-Request URL: " + URL);
             console.log("<- Importing files... ->");
             const files = await github.request(URL);
@@ -91,8 +91,8 @@ jobs:
               });
               feedbackmajor = feedbackmajor.data;
               console.log("The OWL-File got feedback from !OOPS. For more information view the file below:");
-              // console.log("positiveFeedback Zeichenzahl: " + positiveFeedback.length);
-              // console.log(positiveFeedback.data);
+              console.log("positiveFeedback Zeichenzahl: " + positiveFeedback.length);
+              console.log(positiveFeedback.data);
               console.log("feedbackminor Pitfalls: " + minor.data);
               console.log("feedbackminor Zeichenzahl: " + feedbackminor.length);
               console.log(feedbackminor);
