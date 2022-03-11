@@ -95,7 +95,7 @@ jobs:
               console.log("<- OOPS Reports ->");
               console.log("The OWL-File got feedback from OOPS!.");
               console.log("<- OOPS Feedback to MINOR Pitfalls ->");
-              console.log("Analyzed MINOR-Pitfalls (from /OOPSPitfalls/major.txt): " + minor.data);
+              console.log("Analyzed MINOR-Pitfalls (from /OOPSPitfalls/minor.txt): " + minor.data);
               if (feedbackminor.length > positiveFeedback.length)
                 {
                 console.log("OWL File has MINOR-OOPS! Pitfalls");
