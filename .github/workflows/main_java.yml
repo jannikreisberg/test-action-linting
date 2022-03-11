@@ -99,25 +99,28 @@ jobs:
               if (feedbackminor.length > positiveFeedback.length)
                 {
                 console.log("OWL File has MINOR-OOPS! Pitfalls");
+                console.log("OOPS!-Minor-Pitfalls-Feedback: ");
+                console.log(feedbackminor);
                 } else {
                 console.log("OWL File has no MINOR-OOPS! Pitfalls");
                 };
-              console.log("OOPS!-Minor-Pitfalls-Feedback: ");
-              console.log(feedbackminor);
               console.log("<- OOPS! Feedback to MAJOR Pitfalls  ->");
               console.log("Analyzed MAJOR-Pitfalls (from /OOPSpitfalls/major.txt): " + major.data);
               if (feedbackmajor.length > positiveFeedback.length)
                 {
                 controllvar += 1;
                 console.log("OWL File has MAJOR-OOPS! Pitfalls");
+                console.log("OOPS!-Major-Pitfalls-Feedback: ");
+                console.log(feedbackmajor);
                 } else {
                 console.log("OWL File has no MAJOR-OOPS! Pitfalls");
                 };
-              console.log("OOPS!-Major-Pitfalls-Feedback: ");
-              console.log(feedbackmajor);
+              console.log("<- Final Feedback to Pull-Request ->");
               if (controllvar > 0)
                 {
                 core.setFailed('Your ontology has OOPS! MAJOR Pitfalls. Please make sure to fix pitfalls before merging.')
+                } else {
+                // tbd
                 }
               }
             }
