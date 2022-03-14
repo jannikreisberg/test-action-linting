@@ -1,0 +1,126 @@
+# A workflow to check for "OOPS" pitfalls of changed ontology files
+name: Check if ontology has OOPS! Pitfalls
+
+# Controls when the workflow will run
+on:
+  # Triggered by PRs to develop
+  pull_request:
+    types: [opened, edited]
+
+    paths:
+      - '**.owl'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "check pitfalls"
+  check-pitfalls:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    #   - uses: actions/checkout@v2
+    #   - uses: actions/setup-node@v2
+    #    with:
+    #      node-version: 14
+    #   - run: npm ci
+       - run: npm install axios
+    #   - run: npm install line-reader
+       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+       - uses: actions/github-script@v6
+         with:
+          script: |
+            console.log("<- Get files and check OOPS! pitfalls ->");
+            // const URL = "https://api.github.com/repos/${{github.repository}}/pulls/${{github.event.pull_request.number}}/files"
+            const URL = "https://api.github.com/repos/jannikreisberg/test-action-linting/pulls/7/files"
+            const OOPSURL = "http://oops.linkeddata.es/rest"
+            const major = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSPitfalls/major.txt")
+            const minor = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSPitfalls/minor.txt")
+            var positiveFeedback = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSPitfalls/positiveFeedback.txt")
+            positiveFeedback = positiveFeedback.data;
+            var controllvar = 0;
+            console.log("Analyzing following Pull-Request URL: " + URL);
+            console.log("<- Importing files... ->");
+            const files = await github.request(URL);
+            console.log("Files import successful!");
+            console.log("<- Analyzing files ->");
+            console.log("RAW-File-Url list of Pull-Request files:");
+            const raw_urls = files.data.map(files => files.raw_url);
+            console.log(raw_urls);
+            const raw_url_items = raw_urls.values();
+            for (const raw_url_item of raw_url_items)
+            {
+            if (raw_url_item.endsWith(".owl") == true)
+              {
+              console.log("<- Found OWL-Files in Pull-Request ->");
+              console.log(raw_url_item);
+              console.log("This file will be OOPS! checked. ");
+              var checkingfile = await github.request(raw_url_item);
+              checkingfile = checkingfile.data;
+              console.log("<- OOPS! feedback to OWL-File ->");
+              var axios = require("axios");
+              var xmlBodyStrminor = `<?xml version="1.0" encoding="UTF-8"?>
+                  <OOPSRequest>
+                  <OntologyURI></OntologyURI>
+                  <OntologyContent>
+                  <![CDATA[` + checkingfile + `]]>
+                  </OntologyContent>
+                  <Pitfalls>` + minor.data + `</Pitfalls>
+                  <OutputFormat></OutputFormat>
+                  </OOPSRequest`
+              var feedbackminor = await axios({
+              method: "post",
+              url: OOPSURL,
+              data: xmlBodyStrminor
+              });
+              feedbackminor = feedbackminor.data;
+              var xmlBodyStrmajor = `<?xml version="1.0" encoding="UTF-8"?>
+                  <OOPSRequest>
+                  <OntologyURI></OntologyURI>
+                  <OntologyContent>
+                  <![CDATA[` + checkingfile + `]]>
+                  </OntologyContent>
+                  <Pitfalls>` + major.data + `</Pitfalls>
+                  <OutputFormat></OutputFormat>
+                  </OOPSRequest`
+              var feedbackmajor = await axios({
+              method: "post",
+              url: OOPSURL,
+              data: xmlBodyStrmajor
+              });
+              feedbackmajor = feedbackmajor.data;
+              console.log("<- OOPS Reports ->");
+              console.log("The OWL-File got feedback from OOPS!.");
+              console.log("<- OOPS Feedback to MINOR Pitfalls ->");
+              console.log("The analyzed MINOR-Pitfalls (from /OOPSPitfalls/minor.txt) are: " + minor.data);
+              if (feedbackminor.length > positiveFeedback.length)
+                {
+                console.log("OWL File has MINOR-OOPS! Pitfalls");
+                console.log("OOPS!-Minor-Pitfalls-Feedback: ");
+                console.log(feedbackminor);
+                } else {
+                console.log("OWL File has no MINOR-OOPS! Pitfalls");
+                };
+              console.log("<- OOPS! Feedback to MAJOR Pitfalls  ->");
+              console.log("The analyzed MAJOR-Pitfalls (from /OOPSPitfalls/major.txt) are: " + major.data);
+              if (feedbackmajor.length > positiveFeedback.length)
+                {
+                controllvar += 1;
+                console.log("OWL File has MAJOR-OOPS! Pitfalls");
+                console.log("OOPS!-Major-Pitfalls-Feedback: ");
+                console.log(feedbackmajor);
+                } else {
+                console.log("OWL File has no MAJOR-OOPS! Pitfalls");
+                };
+              console.log("<- Final Feedback to Pull-Request ->");
+              if (controllvar > 0)
+                {
+                core.setFailed('Your ontology has OOPS! MAJOR Pitfalls. Please make sure to fix pitfalls before merging.')
+                } else {
+                // tbd
+                }
+              }
+            }
