@@ -28,14 +28,15 @@ jobs:
     #      node-version: 14
     #   - run: npm ci
        - run: npm install axios
+       - run: npm install 
     #   - run: npm install line-reader
        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
        - uses: actions/github-script@v6
          with:
           script: |
             console.log("<- Get files and check OOPS! pitfalls ->");
-            // const URL = "https://api.github.com/repos/${{github.repository}}/pulls/${{github.event.pull_request.number}}/files"
-            const URL = "https://api.github.com/repos/jannikreisberg/test-action-linting/pulls/7/files"
+            const URL = "https://api.github.com/repos/${{github.repository}}/pulls/${{github.event.pull_request.number}}/files"
+            // const URL = "https://api.github.com/repos/jannikreisberg/test-action-linting/pulls/7/files"
             const OOPSURL = "http://oops.linkeddata.es/rest"
             const major = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSPitfalls/major.txt")
             const minor = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSPitfalls/minor.txt")
