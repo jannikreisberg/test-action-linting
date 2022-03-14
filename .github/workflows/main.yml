@@ -47,7 +47,8 @@ jobs:
             positiveFeedback = positiveFeedback.data;
             var controllvar = 0;
             const fs = require('fs');
-            const factory = import rdf-ext from 'rdf-ext';
+            const fs = require('rdf-ext')();
+            // const factory = import * from 'rdf-ext';
             // const ParserN3 = require('@rdfjs/parser-n3');
             // const SHACLValidator = require('rdf-validate-shacl');
             console.log("Analyzing following Pull-Request URL: " + URL);
