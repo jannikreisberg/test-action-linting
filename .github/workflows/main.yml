@@ -28,7 +28,10 @@ jobs:
     #      node-version: 14
     #   - run: npm ci
        - run: npm install axios
-    #   - run: npm install line-reader
+       - run: npm install fs
+       - run: npm install rdf-ext
+       - run: npm install @rdfjs/parser-n3
+       - run: npm install rdf-validate-shacl
        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
        - uses: actions/github-script@v6
          with:
