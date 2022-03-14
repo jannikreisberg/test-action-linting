@@ -1,23 +1,47 @@
-# OOPS! Pitfall Finder
+# WADL Ontology-Design-Pattern
 
-This Github action offers the opportunity to check the .OWL-Files of an Pull-Request regarding the OOPS!-Pitfalls of http://oops.linkeddata.es/. For more Information about OOPS! compare https://www.semanticscholar.org/paper/OOPS!-(OntOlogy-Pitfall-Scanner!)%3A-An-On-line-Tool-Poveda-Villal%C3%B3n-G%C3%B3mez-P%C3%A9rez/28f692a5b6e61ab48bece1221f4e17e05a9a8139 
-//
-//
+## Introduction
 
-The github action main script is in the file test-action-linting/.github/workflows/main.yml/
+The development of software functionalities, or applications in general, that monitor and analyze manufacturing related data in order to improve, support or automate processes, is becoming increasingly important in industry. These applications require several information from different data sources in their context. An application that is planning a maintenance workers daily schedule for instance, requires several information about machine statuses, production plans and inventory, which resides in different systems likes Programmable Logical Controllers (PLC) or Structured Query Language (SQL) databases. Furthermore, manufacturing companies usually run machines and software systems from different vendors or of different ages. The schemata used in such systems do therefore not follow a certain standard, i.e. they are very heterogeneous in their semantics. When building such applications, accessing, searching and understanding the data sources is becoming a very time intensive, manual and error prone procedure that is repeated for every newly build application and for every newly introduced data source. To allow for an eased access, searching and understanding of these heterogeneous data sources, an ontology can be used to integrate all heterogeneous data sources in one schemata. 
 
-It automatically will be used within the controll tests if you have a new pull request. 
+This repository contains an ontology of WADL which is a standard to describe properties. We maintain a whole list of standard-based ontologies, check out these links:
+ - [VDI 2206](https://github.com/hsu-aut/IndustrialStandard-ODP-VDI2206)
+ - [VDI 2860](https://github.com/hsu-aut/IndustrialStandard-ODP-VDI2860)
+ - [VDI 3682](https://github.com/hsu-aut/IndustrialStandard-ODP-VDI3682)
+ - [DIN 8580](https://github.com/hsu-aut/IndustrialStandard-ODP-DIN8580)
+ - [ISA 88](https://github.com/hsu-aut/IndustrialStandard-ODP-ISA88)
+ - [WADL](https://github.com/hsu-aut/IndustrialStandard-ODP-WADL)
+ - [DIN EN 62264-2](https://github.com/hsu-aut/IndustrialStandard-ODP-DINEN62264-2)
+ - [OPC UA](https://github.com/hsu-aut/IndustrialStandard-ODP-OPC-UA)
+ - [ISO 22400-2](https://github.com/hsu-aut/IndustrialStandard-ODP-ISO22400-2)
 
-The OWL-Files in the pull request will be analyzed based on your personal interests: 
 
-In http://oops.linkeddata.es/webservice.html you can find out which OOPS!-Pitfalls you want to check the .OWL-Files in your Pull-Request for. Currently, you can look for the following pitfalls: _"Pitfalls: list of pitfalls to be scanned. If the list is empty, all the pitfalls will be analyzed. If the user just wants to analyze some pitfalls, just enter the number of the pitfall with a coma separator if more than one pitfall is entered. For instance: “4,11,21” or "P04,P11,P21". Although 35 pitfalls have been identified, not all of them have been implemented. List of implemented pitfalls: **2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 19, 20, 21, 22, 24, 25, 25, 26, 27, 28 and 29**."_ (11/03/2022)
+## WADL
 
-In the folder test-action-linting/.github/workflows/OOPSPitfalls/ you can define **your pitfalls** you want to check during this Github action: 
+TBD
 
-- **minor.TXT** -> Single Line with Pitfalls which are MINOR for your case (e.g. minor.txt: 3,5). The output will be displayed in the command, but it has no effect if this action will be accepted or fail.  
+## Usage
+If you want to this ontology design pattern, the easiest way is to directly import it into your ontology via `owl:imports` statements. Make sure to reference a fixed release version so that you can't get surprised by future changes. To do so, click on the branch selection right below the number of commits and select a tag from the dropdown, e.g. v1.4.2. Then navigate to the .owl-file and open the raw file. For this example it would be https://raw.githubusercontent.com/hsu-aut/IndustrialStandard-ODP-WADL/v1.4.2/WADL.owl. You can use this URL in an `owl:imports` statement of your ontology. If you're having trouble using this URL in a tool like Protégé, try opening your ontology with a text editor and simply inserting your imports manually.
+An example of an imports section looks like this:
 
-- **major.TXT** -> Single Line with Pitfalls which are MAJOR for your case (e.g. minor.txt: 3,5). The output will be displayed in the command. If OOPS! find Major Pitfalls, then this action will fail. 
+```xml
+<owl:Ontology rdf:about="http://www.hsu-ifa.de/ontologies/capability-model#">
+    <owl:versionIRI rdf:resource="http://www.hsu-ifa.de/ontologies/capability-model/1.0.0#"/>
+    <owl:imports rdf:resource="https://raw.githubusercontent.com/hsu-aut/IndustrialStandard-ODP-WADL/v1.4.2/WADL.owl"/>
+</owl:Ontology>
+```
+Of course you can also clone or download this repository and import an ODP from a local copy. The advantage of the first approach is that tools like Protégé or TopBraid Composer will directly use the ontologies from the internet and you can simply increase the version number in case you want to use a newer version of our ODPs.
 
-- **positiveFeedback.TXT** -> This file should NOT be changed. 
+## Tool Support
+In case you want to make creating individuals from these TBoxes a lot easier, check out our 'Lightweight Industrial Ontology Design Support Tool' (LiOnS). It is designed to create RDF models using the Ontology Design Patterns of this repository. This enables users to:
+- Semi-automatically design RDF models (only variable parts of the graph have to be defined)
+- Consistent modelling, without being an ontology expert
+- Downloading Turtle serialized models or SPARQL INSERTs
 
-**For more information of the data analysis, please view the action feedback in the Github workfile view**
+For more information, see https://github.com/hsu-aut/lion.
+
+## Further reading:
+- C. Hildebrandt, A. Köcher, C. Kustner, C.-M. Lopez-Enriquez, A.W. Muller, B. Caesar, C.S. Gundlach, A. Fay: Ontology Building for Cyber-Physical Systems: Application in the Manufacturing Domain. IEEE Transactions on Automation Science and Engineering, 2020, S. 1–17.
+-  C. Hildebrandt, S. Törsleff, T. Bandyszak, B. Caesar, A. Ludewig, A. Fay: Ontology Engineering for Collaborative Embedded Systems – Requirements and Initial Approach. In: Schäfer, Karagiannis (Hrsg.): Fachtagung Modellierung, 2018.
+- C. Hildebrandt, S. Törsleff, B. Caesar, A. Fay: Ontology Building for Cyber-Physical Systems: A domain expert centric approach. In: 2018 14th IEEE Conference on Automation Science and Engineering (CASE 2018), 2018.
+- C. Hildebrandt, A. Scholz, A. Fay, T. Schröder, T. Hadlich, C. Diedrich, M. Dubovy, C. Eck, R. Wiegand: Semantic Modeling for Collaboration and Cooperation of Systems in the production domain. In: 22nd IEEE Emerging Technology and Factory Automation (ETFA), 2017.
