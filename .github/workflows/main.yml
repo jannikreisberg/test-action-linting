@@ -39,6 +39,7 @@ jobs:
             const OOPSURL = "http://oops.linkeddata.es/rest"
             const major = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSPitfalls/major.txt")
             const minor = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSPitfalls/minor.txt")
+            const rules = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/SHACL/rules.rdf")
             var positiveFeedback = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSPitfalls/positiveFeedback.txt")
             positiveFeedback = positiveFeedback.data;
             var controllvar = 0;
