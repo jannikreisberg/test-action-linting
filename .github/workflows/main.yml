@@ -120,7 +120,7 @@ jobs:
                 {
                 core.setFailed('Your ontology has OOPS! MAJOR Pitfalls. Please make sure to fix pitfalls before merging.')
                 } else {
-                // tbd
+                console.log("No OOPS! Major and Minor Pitfalls were found. The action finished successfully.");
                 }
               }
             }
