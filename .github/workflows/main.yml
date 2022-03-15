@@ -37,6 +37,7 @@ jobs:
          with:
           script: |
             console.log("<- Get files and check OOPS! pitfalls ->");
+            // Import all neccessary files
             // const URL = "https://api.github.com/repos/${{github.repository}}/pulls/${{github.event.pull_request.number}}/files"
             const URL = "https://api.github.com/repos/jannikreisberg/test-action-linting/pulls/7/files"
             const OOPSURL = "http://oops.linkeddata.es/rest"
@@ -46,12 +47,14 @@ jobs:
             var positiveFeedback = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSPitfalls/positiveFeedback.txt")
             positiveFeedback = positiveFeedback.data;
             var controllvar = 0;
+            // Import SHACL 
             const fs = require('fs');
             // const factory  = require('rdf-ext')();
-            const { default: factory } = await import('$rdf-ext');
-            import factory from 'rdf-ext';
+            // const { default: factory } = await import('$rdf-ext');
+            // import factory from 'rdf-ext';
             // const ParserN3 = require('@rdfjs/parser-n3');
             // const SHACLValidator = require('rdf-validate-shacl');
+            // Analyze Pull Request Files
             console.log("Analyzing following Pull-Request URL: " + URL);
             console.log("<- Importing files... ->");
             const files = await github.request(URL);
@@ -61,6 +64,7 @@ jobs:
             const raw_urls = files.data.map(files => files.raw_url);
             console.log(raw_urls);
             const raw_url_items = raw_urls.values();
+            // OOPS Pitfall Scanning for each .OWL-File of the pull request
             for (const raw_url_item of raw_url_items)
             {
             if (raw_url_item.endsWith(".owl") == true)
@@ -70,6 +74,7 @@ jobs:
               console.log("This file will be OOPS! checked. ");
               var checkingfile = await github.request(raw_url_item);
               checkingfile = checkingfile.data;
+              // OOPS Request for Minor Pitfalls
               console.log("<- OOPS! feedback to OWL-File ->");
               var axios = require("axios");
               var xmlBodyStrminor = `<?xml version="1.0" encoding="UTF-8"?>
@@ -87,6 +92,7 @@ jobs:
               data: xmlBodyStrminor
               });
               feedbackminor = feedbackminor.data;
+              // OOPS Request for Major Pitfalls
               var xmlBodyStrmajor = `<?xml version="1.0" encoding="UTF-8"?>
                   <OOPSRequest>
                   <OntologyURI></OntologyURI>
@@ -102,9 +108,14 @@ jobs:
               data: xmlBodyStrmajor
               });
               feedbackmajor = feedbackmajor.data;
+              // OOPS! Feedback to Minor Pitfalls
               console.log("<- OOPS Reports ->");
               console.log("The OWL-File got feedback from OOPS!.");
               console.log("<- OOPS Feedback to MINOR Pitfalls ->");
+              if (minor.data == "")
+                {
+                  minor.data = "all possible OOPS! pitfalls"
+                }
               console.log("The analyzed MINOR-Pitfalls (from /OOPSPitfalls/minor.txt) are: " + minor.data);
               if (feedbackminor.length > positiveFeedback.length)
                 {
@@ -114,7 +125,12 @@ jobs:
                 } else {
                 console.log("OWL File has no MINOR-OOPS! Pitfalls");
                 };
+              // OOPS! Feedback to Major Pitfalls
               console.log("<- OOPS! Feedback to MAJOR Pitfalls  ->");
+              if (major.data == "")
+                {
+                  major.data = "all possible OOPS! pitfalls"
+                }
               console.log("The analyzed MAJOR-Pitfalls (from /OOPSPitfalls/major.txt) are: " + major.data);
               if (feedbackmajor.length > positiveFeedback.length)
                 {
@@ -126,6 +142,7 @@ jobs:
                 console.log("OWL File has no MAJOR-OOPS! Pitfalls");
                 };
               console.log("<- Final Feedback to Pull-Request ->");
+              // Set job failed if there are Major pitfalls
               if (controllvar > 0)
                 {
                 core.setFailed('Your ontology has OOPS! MAJOR Pitfalls. Please make sure to fix pitfalls before merging.')
