@@ -1,4 +1,6 @@
-# OOPS! Pitfall Finder
+# Ontology Linting with OOPS!
+
+## Usage
 
 This Github action offers the opportunity to check the .OWL-Files of an Pull-Request regarding the OOPS!-Pitfalls of http://oops.linkeddata.es/. 
 
@@ -7,6 +9,9 @@ For more Information about OOPS! compare https://www.semanticscholar.org/paper/O
 The **github action** script is in the file **test-action-linting/.github/workflows/main.yml**
 
 It automatically will be used within the controll tests if you have a new pull request. 
+
+
+## Input for Github Action: Self defined pitfalls
 
 _The OWL-Files in the pull request will be analyzed based on your personal defined pitfalls:_
 
