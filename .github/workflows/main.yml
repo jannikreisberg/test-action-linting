@@ -39,16 +39,17 @@ jobs:
           script: |
             //
             var readJson = require('read-package-json')
+            var json;
             // readJson(filename, [logFunction=noop], [strict=false], cb)
-            readJson('package.json', console.error, false, function (er, data) {
+            await readJson('package.json', console.error, false, function (er, data) {
             if (er)
               {
                 console.error("There was an error reading the file")
+                json = data
                 return
               }
-            console.error('the package data is', data)
             });
-            console.log("package.json eingelesen.");
+            console.log("Folgende package.json eingelesen: " + json);
             //
             console.log("<- Get files and check OOPS! pitfalls ->");
             // Import all neccessary files
