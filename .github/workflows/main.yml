@@ -29,7 +29,7 @@ jobs:
     #   - run: npm ci
        - run: npm install axios
        - run: npm install fs
-       - run: npm install rdf-ext.mjs
+       - run: npm install rdf-ext
        - run: npm install @rdfjs/parser-n3
        - run: npm install rdf-validate-shacl
        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
