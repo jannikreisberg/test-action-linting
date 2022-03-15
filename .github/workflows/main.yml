@@ -39,11 +39,11 @@ jobs:
           script: |
             //
             var readJson = require('read-package-json')
-            var jsonInput = await github.request(https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/package.json);
+            var jsonInput = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/package.json");
             jsonInput = jsonInput.data;
             console.log("Folgende package.json wird eingelesen: " + jsonInput);
             // readJson(filename, [logFunction=noop], [strict=false], cb)
-            await readJson('', console.error, false, function (er, data) {
+            await readJson(jsonInput, console.error, false, function (er, data) {
             if (er)
               {
                 console.error("There was an error reading the file")
