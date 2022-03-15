@@ -8,7 +8,7 @@ The **github action** script is in the file **test-action-linting/.github/workfl
 
 It automatically will be used within the controll tests if you have a new pull request. 
 
-_The OWL-Files in the pull request will be analyzed based on your personal defined pitfalls: _
+_The OWL-Files in the pull request will be analyzed based on your personal defined pitfalls:_
 
 In http://oops.linkeddata.es/webservice.html you can find out which OOPS!-Pitfalls you want to check the .OWL-Files in your Pull-Request.
 
