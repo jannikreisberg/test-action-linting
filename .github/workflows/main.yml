@@ -38,8 +38,9 @@ jobs:
          with:
           script: |
             //
+            var readJson = require('read-package-json')
             // readJson(filename, [logFunction=noop], [strict=false], cb)
-            readJson('/path/to/package.json', console.error, false, function (er, data) {
+            readJson('package.json', console.error, false, function (er, data) {
             if (er)
               {
                 console.error("There was an error reading the file")
