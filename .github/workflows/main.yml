@@ -111,12 +111,17 @@ jobs:
                   <Pitfalls>` + major.data + `</Pitfalls>
                   <OutputFormat></OutputFormat>
                   </OOPSRequest`
-              var feedbackmajor = await axios({
-              method: "post",
-              url: OOPSURL,
-              data: xmlBodyStrmajor
-              });
-              feedbackmajor = feedbackmajor.data;
+              if (major.data != "no")
+                {
+                  var feedbackmajor = await axios({
+                  method: "post",
+                  url: OOPSURL,
+                  data: xmlBodyStrmajor
+                  });
+                  feedbackmajor = feedbackmajor.data;
+                } else {
+                  var feedbackmajor = "";
+                }
               // OOPS! Feedback to Minor Pitfalls
               console.log("<- OOPS Reports ->");
               console.log("The OWL-File got feedback from OOPS!.");
