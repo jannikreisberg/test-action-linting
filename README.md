@@ -14,22 +14,36 @@ In http://oops.linkeddata.es/webservice.html you can find out which OOPS!-Pitfal
 
 Although 35 pitfalls have been identified, not all of them have been implemented. List of implemented pitfalls: **2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 19, 20, 21, 22, 24, 25, 25, 26, 27, 28 and 29**."_ (Date of Research: 11/03/2022)
 
-If the user just wants to analyze some pitfalls, just enter the number of the pitfall with a coma separator if more than one pitfall is entered. For instance: “4,11,21” or "P04,P11,P21".
-
-If you dont want to have any pitfalls in minor.TXT oder major.TXT, just fill in the files:
-```
-no
-```
-
 In the folder test-action-linting/.github/workflows/OOPSPitfalls/ you can define **your pitfalls** you want to check during this Github action: 
 
 - **minor.TXT** -> Single Line with Pitfalls which are MINOR for your case (e.g. minor.txt: 3,5). The output will be displayed in the command, but it has no effect if this action will be accepted or fail.  
 
 - **major.TXT** -> Single Line with Pitfalls which are MAJOR for your case (e.g. minor.txt: 3,5). The output will be displayed in the command. If OOPS! find Major Pitfalls, then this action will fail. 
 
-minor.TXT and major.TXT should like this example: 
+minor.TXT / major.TXT should like this example: 
 ```
 21,22,24
+```
+
+If the user just wants to analyze some pitfalls, just enter the number of the pitfall with a coma separator if more than one pitfall is entered. For instance: 
+```
+4,11,21
+```
+
+or
+
+```
+P04,P11,P21
+```
+
+If you dont want to have any pitfalls in minor.TXT / major.TXT, just fill in the files:
+```
+no
+```
+
+If you want to have all possible pitfalls in minor.TXT / major.TXT, just fill in the files:
+```
+
 ```
 
 - **positiveFeedback.TXT** -> !!! This file should NOT be changed.!!!
