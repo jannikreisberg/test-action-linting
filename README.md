@@ -18,6 +18,11 @@ In the folder test-action-linting/.github/workflows/OOPSPitfalls/ you can define
 
 - **major.TXT** -> Single Line with Pitfalls which are MAJOR for your case (e.g. minor.txt: 3,5). The output will be displayed in the command. If OOPS! find Major Pitfalls, then this action will fail. 
 
-- **positiveFeedback.TXT** -> This file should NOT be changed. 
+minor.TXT and major.TXT should like this example: 
+```
+21,22,24
+```
+
+- **positiveFeedback.TXT** -> _This file should NOT be changed. _
 
 **For more information of the data analysis, please view the action feedback in the Github workfile view**
