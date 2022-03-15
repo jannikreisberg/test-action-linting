@@ -46,8 +46,8 @@ If you want to have all possible pitfalls in minor.TXT / major.TXT, just fill in
 
 ```
 
-**Important: minor.TXT / major.TXT should always only have one single line & no free space within the line
-**
+**Important: minor.TXT / major.TXT should always only have one single line & no free space within the line**
+
 - **positiveFeedback.TXT** -> !!! This file should NOT be changed.!!!
 
 **For more information of the data analysis, please view the action feedback in the Github workfile view**
