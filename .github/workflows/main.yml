@@ -39,9 +39,11 @@ jobs:
           script: |
             //
             var readJson = require('read-package-json')
-            var json;
+            var jsonInput = await github.request(https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/package.json);
+            jsonInput = jsonInput.data;
+            console.log("Folgende package.json wird eingelesen: " + jsonInput);
             // readJson(filename, [logFunction=noop], [strict=false], cb)
-            await readJson('https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/package.json', console.error, false, function (er, data) {
+            await readJson('', console.error, false, function (er, data) {
             if (er)
               {
                 console.error("There was an error reading the file")
@@ -49,7 +51,7 @@ jobs:
                 return
               }
             });
-            console.log("Folgende package.json eingelesen: " + json);
+            console.log("Folgende package.json wurde eingelesen: " + json);
             //
             console.log("<- Get files and check OOPS! pitfalls ->");
             // Import all neccessary files
