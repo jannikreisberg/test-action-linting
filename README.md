@@ -10,11 +10,16 @@ It automatically will be used within the controll tests if you have a new pull r
 
 _The OWL-Files in the pull request will be analyzed based on your personal defined pitfalls:_
 
-In http://oops.linkeddata.es/webservice.html you can find out which OOPS!-Pitfalls you want to check the .OWL-Files in your Pull-Request.
+In http://oops.linkeddata.es/webservice.html you can find out which OOPS!-Pitfalls you want to check the .OWL-Files in your Pull-Request. 
 
-If the user just wants to analyze some pitfalls, just enter the number of the pitfall with a coma separator if more than one pitfall is entered. For instance: “4,11,21” or "P04,P11,P21". 
+Although 35 pitfalls have been identified, not all of them have been implemented. List of implemented pitfalls: **2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 19, 20, 21, 22, 24, 25, 25, 26, 27, 28 and 29**."_ (Date of Research: 11/03/2022)
 
-Although 35 pitfalls have been identified, not all of them have been implemented. List of implemented pitfalls: **2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 19, 20, 21, 22, 24, 25, 25, 26, 27, 28 and 29**."_ (11/03/2022)
+If the user just wants to analyze some pitfalls, just enter the number of the pitfall with a coma separator if more than one pitfall is entered. For instance: “4,11,21” or "P04,P11,P21".
+
+If you dont want to have any pitfalls in minor.TXT oder major.TXT, just fill in like here:
+```
+no
+```
 
 In the folder test-action-linting/.github/workflows/OOPSPitfalls/ you can define **your pitfalls** you want to check during this Github action: 
 
