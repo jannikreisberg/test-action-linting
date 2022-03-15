@@ -53,7 +53,7 @@ If you want to have all possible pitfalls in minor.TXT / major.TXT, just fill in
 
 ```
 
-- **positiveFeedback.TXT** -> !!! This file should NOT be changed.!!!
+- **positiveFeedback.TXT -> !!! This file should NOT be changed !!!**
 
 ## Aditional Notes
 
