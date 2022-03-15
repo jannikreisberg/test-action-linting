@@ -16,7 +16,7 @@ Although 35 pitfalls have been identified, not all of them have been implemented
 
 If the user just wants to analyze some pitfalls, just enter the number of the pitfall with a coma separator if more than one pitfall is entered. For instance: “4,11,21” or "P04,P11,P21".
 
-If you dont want to have any pitfalls in minor.TXT oder major.TXT, just fill in like here:
+If you dont want to have any pitfalls in minor.TXT oder major.TXT, just fill in the files:
 ```
 no
 ```
