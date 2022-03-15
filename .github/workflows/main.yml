@@ -90,12 +90,17 @@ jobs:
                   <Pitfalls>` + minor.data + `</Pitfalls>
                   <OutputFormat></OutputFormat>
                   </OOPSRequest`
-              var feedbackminor = await axios({
-              method: "post",
-              url: OOPSURL,
-              data: xmlBodyStrminor
-              });
+              if (minor.data != "no")
+                {
+                  var feedbackminor = await axios({
+                  method: "post",
+                  url: OOPSURL,
+                  data: xmlBodyStrminor
+                  });
               feedbackminor = feedbackminor.data;
+                } else {
+                  // TBD
+                }
               // OOPS Request for Major Pitfalls
               var xmlBodyStrmajor = `<?xml version="1.0" encoding="UTF-8"?>
                   <OOPSRequest>
