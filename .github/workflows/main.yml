@@ -41,6 +41,7 @@ jobs:
             var readJson = require('read-package-json')
             var jsonInput = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/package.json");
             jsonInput = jsonInput.data;
+            var json;
             console.log("Folgende package.json wird eingelesen: " + jsonInput);
             // readJson(filename, [logFunction=noop], [strict=false], cb)
             await readJson(jsonInput, console.error, false, function (er, data) {
