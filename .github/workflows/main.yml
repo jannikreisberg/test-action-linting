@@ -32,12 +32,22 @@ jobs:
        - run: npm install rdf-ext
        - run: npm install @rdfjs/parser-n3
        - run: npm install rdf-validate-shacl
+       - run: npm install read-package-json
        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
        - uses: actions/github-script@v6
          with:
           script: |
             //
-            // No-Option für minor & major pitfalls - wenn keine OOPS Pitfalls abgefragt werden soll
+            // readJson(filename, [logFunction=noop], [strict=false], cb)
+            readJson('/path/to/package.json', console.error, false, function (er, data) {
+            if (er)
+              {
+                console.error("There was an error reading the file")
+                return
+              }
+            console.error('the package data is', data)
+            });
+            console.log("package.json eingelesen.");
             //
             console.log("<- Get files and check OOPS! pitfalls ->");
             // Import all neccessary files
