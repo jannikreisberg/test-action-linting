@@ -67,7 +67,7 @@ jobs:
             var controllvar = 0;
             // Import SHACL 
             const fs = require('fs');
-            // const factory  = require('rdf-ext')();
+            const factory = require('rdf-ext');
             // const factory = await import('rdf-ext');
             // import factory from 'rdf-ext.mjs';
             // var package = require('some-module/package.json');
