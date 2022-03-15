@@ -97,9 +97,9 @@ jobs:
                   url: OOPSURL,
                   data: xmlBodyStrminor
                   });
-              feedbackminor = feedbackminor.data;
+                  feedbackminor = feedbackminor.data;
                 } else {
-                  // TBD
+                  var feedbackminor = "";
                 }
               // OOPS Request for Major Pitfalls
               var xmlBodyStrmajor = `<?xml version="1.0" encoding="UTF-8"?>
