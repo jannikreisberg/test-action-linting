@@ -1,4 +1,6 @@
-# OOPS! Pitfall Finder
+# Ontology Linting with OOPS!
+
+## Usage
 
 This Github action offers the opportunity to check the .OWL-Files of an Pull-Request regarding the OOPS!-Pitfalls of http://oops.linkeddata.es/. 
 
@@ -7,6 +9,9 @@ For more Information about OOPS! compare https://www.semanticscholar.org/paper/O
 The **github action** script is in the file **test-action-linting/.github/workflows/main.yml**
 
 It automatically will be used within the controll tests if you have a new pull request. 
+
+
+## Input for Github Action: Self defined pitfalls
 
 _The OWL-Files in the pull request will be analyzed based on your personal defined pitfalls:_
 
@@ -19,6 +24,8 @@ In the folder test-action-linting/.github/workflows/OOPSPitfalls/ you can define
 - **minor.TXT** -> Single Line with Pitfalls which are MINOR for your case (e.g. minor.txt: 3,5). The output will be displayed in the command, but it has no effect if this action will be accepted or fail.  
 
 - **major.TXT** -> Single Line with Pitfalls which are MAJOR for your case (e.g. minor.txt: 3,5). The output will be displayed in the command. If OOPS! find Major Pitfalls, then this action will fail. 
+
+**Important: minor.TXT / major.TXT should always only have one single line & no free space within the line**
 
 minor.TXT / major.TXT should like this example: 
 ```
@@ -46,6 +53,8 @@ If you want to have all possible pitfalls in minor.TXT / major.TXT, just fill in
 
 ```
 
-- **positiveFeedback.TXT** -> !!! This file should NOT be changed.!!!
+- **positiveFeedback.TXT -> !!! This file should NOT be changed !!!**
+
+## Aditional Notes
 
 **For more information of the data analysis, please view the action feedback in the Github workfile view**
