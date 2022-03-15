@@ -38,21 +38,21 @@ jobs:
          with:
           script: |
             //
-            var readJson = require('read-package-json')
-            var jsonInput = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/package.json");
-            jsonInput = jsonInput.data;
-            var json;
-            console.log("Folgende package.json wird eingelesen: " + jsonInput);
+            // var readJson = require('read-package-json')
+            // var jsonInput = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/package.json");
+            // jsonInput = jsonInput.data;
+            // var json;
+            // console.log("Folgende package.json wird eingelesen: " + jsonInput);
             // readJson(filename, [logFunction=noop], [strict=false], cb)
-            await readJson('https://raw.githubusercontent.com/jannikreisberg/test-action-linting/master/.github/workflows/package.json', console.error, false, function (er, data) {
-            if (er)
-              {
-                console.error("There was an error reading the file")
-                json = data
-                return
-              }
-            });
-            console.log("Folgende package.json wurde eingelesen: " + json);
+            // await readJson('https://raw.githubusercontent.com/jannikreisberg/test-action-linting/master/.github/workflows/package.json', console.error, false, function (er, data) {
+            // if (er)
+            //  {
+            //    console.error("There was an error reading the file")
+            //    json = data
+            //    return
+            //  }
+            // });
+            // console.log("Folgende package.json wurde eingelesen: " + json);
             //
             console.log("<- Get files and check OOPS! pitfalls ->");
             // Import all neccessary files
@@ -73,8 +73,8 @@ jobs:
             // var package = require('some-module/package.json');
             // console.log(package);
             // 
-            // const ParserN3 = require('@rdfjs/parser-n3');
-            // const SHACLValidator = require('rdf-validate-shacl');
+            const ParserN3 = require('@rdfjs/parser-n3');
+            const SHACLValidator = require('rdf-validate-shacl');
             // Analyze Pull Request Files
             console.log("Analyzing following Pull-Request URL: " + URL);
             console.log("<- Importing files... ->");
