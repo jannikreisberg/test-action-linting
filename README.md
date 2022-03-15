@@ -1,8 +1,6 @@
 # OOPS! Pitfall Finder
 
 This Github action offers the opportunity to check the .OWL-Files of an Pull-Request regarding the OOPS!-Pitfalls of http://oops.linkeddata.es/. For more Information about OOPS! compare https://www.semanticscholar.org/paper/OOPS!-(OntOlogy-Pitfall-Scanner!)%3A-An-On-line-Tool-Poveda-Villal%C3%B3n-G%C3%B3mez-P%C3%A9rez/28f692a5b6e61ab48bece1221f4e17e05a9a8139 
-//
-//
 
 The github action main script is in the file test-action-linting/.github/workflows/main.yml
 
