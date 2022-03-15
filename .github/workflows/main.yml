@@ -54,7 +54,7 @@ jobs:
             const fs = require('fs');
             // const factory  = require('rdf-ext')();
             // const factory = await import('rdf-ext');
-            import factory from 'rdf-ext';
+            import factory from 'rdf-ext'.mjs;
             // 
             // const ParserN3 = require('@rdfjs/parser-n3');
             // const SHACLValidator = require('rdf-validate-shacl');
