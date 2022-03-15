@@ -36,6 +36,9 @@ jobs:
        - uses: actions/github-script@v6
          with:
           script: |
+            //
+            // No-Option für minor & major pitfalls - wenn keine OOPS Pitfalls abgefragt werden soll
+            //
             console.log("<- Get files and check OOPS! pitfalls ->");
             // Import all neccessary files
             // const URL = "https://api.github.com/repos/${{github.repository}}/pulls/${{github.event.pull_request.number}}/files"
@@ -50,8 +53,9 @@ jobs:
             // Import SHACL 
             const fs = require('fs');
             // const factory  = require('rdf-ext')();
-            // const { default: factory } = await import('$rdf-ext');
+            const factory = await import('rdf-ext');
             // import factory from 'rdf-ext';
+            // 
             // const ParserN3 = require('@rdfjs/parser-n3');
             // const SHACLValidator = require('rdf-validate-shacl');
             // Analyze Pull Request Files
