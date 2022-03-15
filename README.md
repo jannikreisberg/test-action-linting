@@ -4,7 +4,7 @@ This Github action offers the opportunity to check the .OWL-Files of an Pull-Req
 //
 //
 
-The github action main script is in the file test-action-linting/.github/workflows/main.yml/
+The github action main script is in the file test-action-linting/.github/workflows/main.yml
 
 It automatically will be used within the controll tests if you have a new pull request. 
 
