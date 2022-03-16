@@ -32,28 +32,11 @@ jobs:
        - run: npm install rdf-ext
        - run: npm install @rdfjs/parser-n3
        - run: npm install rdf-validate-shacl
-       - run: npm install read-package-json
+    #   - run: npm install read-package-json
        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
        - uses: actions/github-script@v6
          with:
           script: |
-            //
-            // var readJson = require('read-package-json')
-            // var jsonInput = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/package.json");
-            // jsonInput = jsonInput.data;
-            // var json;
-            // console.log("Folgende package.json wird eingelesen: " + jsonInput);
-            // readJson(filename, [logFunction=noop], [strict=false], cb)
-            // await readJson('https://raw.githubusercontent.com/jannikreisberg/test-action-linting/master/.github/workflows/package.json', console.error, false, function (er, data) {
-            // if (er)
-            //  {
-            //    console.error("There was an error reading the file")
-            //    json = data
-            //    return
-            //  }
-            // });
-            // console.log("Folgende package.json wurde eingelesen: " + json);
-            //
             console.log("<- Get files and check OOPS! pitfalls ->");
             // Import all neccessary files
             // const URL = "https://api.github.com/repos/${{github.repository}}/pulls/${{github.event.pull_request.number}}/files"
@@ -65,17 +48,18 @@ jobs:
             var positiveFeedback = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSPitfalls/positiveFeedback.txt")
             positiveFeedback = positiveFeedback.data;
             var controllvar = 0;
-            // Import SHACL 
-            const fs = require('fs');
-            const factory = require('rdf-ext');
+            //
+            // Import SHACL
             // const factory = await import('rdf-ext');
             // import factory from 'rdf-ext.mjs';
             // var package = require('some-module/package.json');
             // console.log(package);
-            // 
-            const ParserN3 = require('@rdfjs/parser-n3');
-            const SHACLValidator = require('rdf-validate-shacl');
+            // const ParserN3 = require('@rdfjs/parser-n3');
+            // const SHACLValidator = require('rdf-validate-shacl');
+            //
             // Analyze Pull Request Files
+            const fs = require('fs');
+            const factory = require('rdf-ext');
             console.log("Analyzing following Pull-Request URL: " + URL);
             console.log("<- Importing files... ->");
             const files = await github.request(URL);
