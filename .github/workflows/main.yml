@@ -38,13 +38,13 @@ jobs:
          with:
           script: |
             console.log("<- Get files and check OOPS! pitfalls ->");
-            // Import all neccessary files
+            // Import all neccessary files and set counter
             // const URL = "https://api.github.com/repos/${{github.repository}}/pulls/${{github.event.pull_request.number}}/files"
             const URL = "https://api.github.com/repos/jannikreisberg/test-action-linting/pulls/7/files"
             const OOPSURL = "http://oops.linkeddata.es/rest"
             const major = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSPitfalls/major.txt")
             const minor = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSPitfalls/minor.txt")
-            const rules = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/SHACL/rules.rdf")
+            const shapes = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/SHACL/shapes.rdf")
             var positiveFeedback = await github.request("https://raw.githubusercontent.com/${{github.repository}}/master/.github/workflows/OOPSPitfalls/positiveFeedback.txt")
             positiveFeedback = positiveFeedback.data;
             var controllvar = 0;
